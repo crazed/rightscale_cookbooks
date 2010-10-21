@@ -11,5 +11,5 @@ template "/etc/nginx/conf.d/proxy.conf" do
   mode "644"
   notifies :restart, resources(:service => "nginx")
   source "proxy.conf.erb"
-  variables(:origin => node.default.origin)
+  variables(:origin => node.origin)
 end
