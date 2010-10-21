@@ -5,7 +5,7 @@ service "varnish" do
   action :enable
 end
 
-cookbook_file "/etc/varnish/default.vcl" do
+remote_file "/etc/varnish/default.vcl" do
   source "default.vcl"
   mode "644"
   owner "root"
@@ -14,7 +14,7 @@ end
 
 case node.platform
 when "ubuntu"
-  cookbook_file "/etc/default/varnish" do
+  remote_file "/etc/default/varnish" do
     source "varnish-default"
     mode "644"
     owner "root"
