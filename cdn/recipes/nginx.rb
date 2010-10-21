@@ -10,6 +10,6 @@ template "/etc/nginx/conf.d/proxy.conf" do
   group "root"
   mode "644"
   notifies :restart, resources(:service => "nginx")
-  source "default.erb"
+  source "proxy.conf.erb"
   variables(:origin => node.default.origin)
 end
