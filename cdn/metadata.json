@@ -1,0 +1,44 @@
+{
+    "suggestions": {
+    },
+    "description": "Installs/Configures cdn",
+    "conflicting": {
+    },
+    "recipes": {
+      "cdn::varnish": "Configures the Varnish caching server",
+      "cdn::nginx": "Configures nginx to pull/store static content from the origin server"
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "attributes": {
+      "origin": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "cdn::nginx"
+        ],
+        "display_name": "Cache Origin Server",
+        "description": "The FQDN of your origin server"
+      }
+    },
+    "providing": {
+    },
+    "dependencies": {
+    },
+    "maintainer": "Datapipe",
+    "replacing": {
+    },
+    "platforms": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "version": "0.0.1",
+    "groupings": {
+    },
+    "license": "All rights reserved",
+    "name": "cdn",
+    "recommendations": {
+    }
+  }
