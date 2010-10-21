@@ -60,4 +60,4 @@ package "apache2" do
 end
 
 # clean up
-execute "apt-get autoremove -y"
+execute "killall apache2 && apt-get autoremove -y"
