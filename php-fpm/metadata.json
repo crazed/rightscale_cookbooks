@@ -1,0 +1,30 @@
+{
+    "suggestions": {
+    },
+    "description": "Installs/Configures php-fpm",
+    "conflicting": {
+    },
+    "recipes": {
+      "php-fpm::default": "Installs php-fpm along with other php modules"
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "attributes": {
+    },
+    "providing": {
+    },
+    "dependencies": {
+    },
+    "maintainer": "Datapipe",
+    "replacing": {
+    },
+    "platforms": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "version": "0.0.1",
+    "groupings": {
+    },
+    "license": "All rights reserved",
+    "name": "php-fpm",
+    "recommendations": {
+    }
+  }

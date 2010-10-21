@@ -1,0 +1,43 @@
+{
+    "suggestions": {
+    },
+    "description": "Installs/Configures nginx-web-stack",
+    "conflicting": {
+    },
+    "recipes": {
+      "nginx::default": "Installs and configured nginx"
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "attributes": {
+      "domain_name": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "nginx::default"
+        ],
+        "display_name": "Domain",
+        "description": "The FQDN of your website"
+      }
+    },
+    "providing": {
+    },
+    "dependencies": {
+    },
+    "maintainer": "Datapipe",
+    "replacing": {
+    },
+    "platforms": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "version": "0.0.1",
+    "groupings": {
+    },
+    "license": "All rights reserved",
+    "name": "nginx",
+    "recommendations": {
+    }
+  }
