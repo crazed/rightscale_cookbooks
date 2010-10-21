@@ -5,20 +5,47 @@
     "conflicting": {
     },
     "recipes": {
+      "s3cmd::default": "Installs and configures s3cmd"
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "long_description": "",
     "attributes": {
+      "aws_secret_key": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "s3cmd::default"
+        ],
+        "display_name": "AWS Secret Key",
+        "description": "Your AWS Secret Key"
+      },
+      "aws_access_key": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "s3cmd::default"
+        ],
+        "display_name": "AWS Access Key",
+        "description": "Your AWS access key"
+      }
     },
     "providing": {
     },
     "dependencies": {
     },
-    "maintainer": "YOUR_COMPANY_NAME",
+    "maintainer": "Datapipe",
     "replacing": {
     },
     "platforms": {
     },
-    "maintainer_email": "YOUR_EMAIL",
+    "maintainer_email": "afeid@datapipe.com",
     "version": "0.0.1",
     "groupings": {
     },
