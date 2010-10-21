@@ -53,3 +53,11 @@ service "php5-fpm" do
 	supports :restart => true
 	action [ :enable, :start ]
 end
+
+# remove apache 
+package "apache2" do
+	action :remove
+end
+
+# clean up
+execute "apt-get autoremove -y"
