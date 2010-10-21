@@ -2,9 +2,9 @@ upstream origin {
         server <%= @origin %>;
 }
 server {
-        listen   	81;
+        listen   	81 default;
         server_name  	localhost;
-        root 		/var/www;
+        root 		/cache;
 
         location @static {
                 internal;
