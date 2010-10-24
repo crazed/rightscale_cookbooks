@@ -38,6 +38,12 @@ template "/etc/nginx/sites-available/default" do
 	})
 end
 
+# kill apache2 if it's there
+service "apache2" do
+  only_if "pgrep apache2"
+  action [ :disable, :stop ]
+end
+
 # start up nginx
 service "nginx" do
 	supports :status => true, :restart => true
