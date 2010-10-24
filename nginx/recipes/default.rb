@@ -32,8 +32,7 @@ template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
   variables (
     :document_root => doc_root,
-    :server_name => node.domain_name
-  )
+    :server_name => node.domain_name)
 end
 
 # nginx.conf, set the processes to total cpu cores
