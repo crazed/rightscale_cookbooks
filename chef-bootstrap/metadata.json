@@ -12,7 +12,7 @@
   "groupings": {
   },
   "attributes": {
-    "validation.pem": {
+    "validation_pem": {
       "required": "required",
       "calculated": false,
       "choice": [
