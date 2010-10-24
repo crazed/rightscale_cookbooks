@@ -1,0 +1,30 @@
+{
+    "providing": {
+    },
+    "license": "All rights reserved",
+    "maintainer": "Datapipe",
+    "replacing": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "groupings": {
+    },
+    "description": "Installs/Configures apt",
+    "recommendations": {
+    },
+    "platforms": {
+    },
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "version": "0.0.1",
+    "recipes": {
+      "apt::default": "configures apt to not install recommended or suggested packages"
+    },
+    "name": "apt",
+    "conflicting": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+  }
