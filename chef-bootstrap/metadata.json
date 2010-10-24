@@ -1,0 +1,43 @@
+{
+  "recipes": {
+    "chef-bootstrap::default": "sets instance up to be bootstrapped via a chef-server"
+  },
+  "providing": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "description": "Installs/Configures chef-bootstrap",
+  "replacing": {
+  },
+  "maintainer_email": "YOUR_EMAIL",
+  "groupings": {
+  },
+  "attributes": {
+    "validation.pem": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "chef-bootstrap::default"
+      ],
+      "display_name": "Validation Certificate",
+      "description": "validation certificate for use with a chef-server"
+    }
+  },
+  "recommendations": {
+  },
+  "dependencies": {
+  },
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.1",
+  "license": "All rights reserved",
+  "name": "chef-bootstrap",
+  "conflicting": {
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+}
