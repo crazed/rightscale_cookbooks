@@ -7,3 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 package "memcached"
+
+service "memcached" do
+  action [ :enable, :start ]
+end
