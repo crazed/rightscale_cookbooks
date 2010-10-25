@@ -17,3 +17,9 @@ attribute "boot_run_list",
   :type => "array",
   :required => "required",
   :recipes => [ 'chef-bootstrap::default' ]
+attribute "chef_server",
+  :display_name => "Chef Server URL",
+  :description => "the url of your chef-server",
+  :type => "string",
+  :required => "required",
+  :recipes => [ 'chef-bootstrap::default' ]

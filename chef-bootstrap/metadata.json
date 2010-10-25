@@ -14,6 +14,19 @@
     "platforms": {
     },
     "attributes": {
+      "chef_server": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "chef-bootstrap::default"
+        ],
+        "description": "the url of your chef-server",
+        "display_name": "Chef Server URL"
+      },
       "validation_pem": {
         "required": "required",
         "calculated": false,
