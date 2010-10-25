@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-p node.boot_run_list
+Chef::Log.info "Run List: #{node.boot_run_list}"
 execute "gem update --system"
 gem_package "chef"
 
