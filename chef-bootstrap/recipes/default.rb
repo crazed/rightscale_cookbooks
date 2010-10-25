@@ -21,12 +21,12 @@ execute "create validation.pem" do
 end
 
 execute "chef-client" do
-  command "chef-client -j /tmp/base.json"
+  command "chef-client -S #{node.chef_server} -j /tmp/base.json"
   action :nothing
 end
 
 template "/tmp/base.json" do
   source "base.erb"
-  variables(:server_url => node.chef_server, :run_list => node.boot_run_list)
+  variables(:run_list => node.boot_run_list)
   notifies :run, resources(:execute => "chef-client")
 end
