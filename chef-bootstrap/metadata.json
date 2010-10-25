@@ -46,7 +46,7 @@
         "choice": [
 
         ],
-        "type": "array",
+        "type": "string",
         "recipes": [
           "chef-bootstrap::default"
         ],
