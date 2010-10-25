@@ -25,6 +25,14 @@ execute "chef-client" do
   action :nothing
 end
 
+template "/etc/chef/client.rb" do
+  owner "root"
+  group "root"
+  mode "644"
+  source "client.erb"
+  variables(:server_url => node.chef_server_url)
+end
+
 template "/tmp/base.json" do
   source "base.erb"
   variables(:run_list => node.boot_run_list)
