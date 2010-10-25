@@ -30,7 +30,7 @@ template "/etc/chef/client.rb" do
   group "root"
   mode "644"
   source "client.erb"
-  variables(:server_url => node.chef_server_url)
+  variables(:server_url => node.chef_server)
 end
 
 template "/tmp/base.json" do
