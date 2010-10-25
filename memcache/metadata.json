@@ -1,0 +1,30 @@
+{
+    "providing": {
+    },
+    "license": "All rights reserved",
+    "maintainer": "YOUR_COMPANY_NAME",
+    "replacing": {
+    },
+    "maintainer_email": "YOUR_EMAIL",
+    "groupings": {
+    },
+    "description": "Installs/Configures memcache",
+    "recommendations": {
+    },
+    "platforms": {
+    },
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "version": "0.0.1",
+    "recipes": {
+      "memcache::default": "installs and configured memcached"
+    },
+    "name": "memcache",
+    "conflicting": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+  }
