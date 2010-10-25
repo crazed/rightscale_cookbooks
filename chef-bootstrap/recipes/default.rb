@@ -19,3 +19,14 @@ end
 execute "create validation.pem" do
   command "echo '#{node[:validation_pem]}' > /etc/chef/validation.pem"
 end
+
+execute "chef-client" do
+  command "chef-client -j /tmp/base.json"
+  action :nothing
+end
+
+template "/tmp/base.json" do
+  source "base.erb"
+  variables(:server_url => node.chef_server, :run_list => node.boot_run_list)
+  notifies :run, resources(:execute => "chef-client")
+end

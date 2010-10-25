@@ -11,3 +11,9 @@ attribute "validation_pem",
   :type => "string",
   :required => "required",
   :recipes => [ 'chef-bootstrap::default' ]
+attribute "boot_run_list",
+  :display_name => "Bootstrap Run List",
+  :description => "comma separated run_list to initially bootstrap a client",
+  :type => "array",
+  :required => "required",
+  :recipes => [ 'chef-bootstrap::default' ]

@@ -1,43 +1,56 @@
 {
-  "recipes": {
-    "chef-bootstrap::default": "sets instance up to be bootstrapped via a chef-server"
-  },
-  "providing": {
-  },
-  "maintainer": "YOUR_COMPANY_NAME",
-  "description": "Installs/Configures chef-bootstrap",
-  "replacing": {
-  },
-  "maintainer_email": "YOUR_EMAIL",
-  "groupings": {
-  },
-  "attributes": {
-    "validation_pem": {
-      "required": "required",
-      "calculated": false,
-      "choice": [
+    "providing": {
+    },
+    "license": "All rights reserved",
+    "maintainer": "YOUR_COMPANY_NAME",
+    "replacing": {
+    },
+    "maintainer_email": "YOUR_EMAIL",
+    "groupings": {
+    },
+    "description": "Installs/Configures chef-bootstrap",
+    "recommendations": {
+    },
+    "platforms": {
+    },
+    "attributes": {
+      "validation_pem": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
 
-      ],
-      "type": "string",
-      "recipes": [
-        "chef-bootstrap::default"
-      ],
-      "display_name": "Validation Certificate",
-      "description": "validation certificate for use with a chef-server"
-    }
-  },
-  "recommendations": {
-  },
-  "dependencies": {
-  },
-  "suggestions": {
-  },
-  "platforms": {
-  },
-  "version": "0.0.1",
-  "license": "All rights reserved",
-  "name": "chef-bootstrap",
-  "conflicting": {
-  },
-  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
-}
+        ],
+        "type": "string",
+        "recipes": [
+          "chef-bootstrap::default"
+        ],
+        "description": "validation certificate for use with a chef-server",
+        "display_name": "Validation Certificate"
+      },
+      "boot_run_list": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "array",
+        "recipes": [
+          "chef-bootstrap::default"
+        ],
+        "description": "comma separated run_list to initially bootstrap a client",
+        "display_name": "Bootstrap Run List"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "version": "0.0.1",
+    "recipes": {
+      "chef-bootstrap::default": "sets instance up to be bootstrapped via a chef-server"
+    },
+    "name": "chef-bootstrap",
+    "conflicting": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+  }
