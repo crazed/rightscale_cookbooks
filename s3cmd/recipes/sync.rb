@@ -13,10 +13,10 @@ directory node.code_path do
 end
 
 execute "s3sync" do
-  command "/usr/bin/s3cmd sync #{node.s3_bucket} #{node.code_path}"
+  command "/usr/bin/s3cmd sync #{node.s3_bucket}/ #{node.code_path}"
 end
 
 cron "s3sync" do
   minute "*/#{node.sync_minutes}"
-  command "/usr/bin/s3cmd sync #{node.s3_bucket} #{node.code_path}"
+  command "/usr/bin/s3cmd sync #{node.s3_bucket}/ #{node.code_path}"
 end
