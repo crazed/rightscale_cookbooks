@@ -14,5 +14,5 @@ directory node.code_path do
 end
 
 execute "s3pull" do
-  command "/usr/bin/s3cmd get --recursive #{node.s3_bucket}/ #{node.code_path}"
+  command "/usr/bin/s3cmd get --force --recursive #{node.s3_bucket}/ #{node.code_path}"
 end
