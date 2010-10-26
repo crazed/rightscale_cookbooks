@@ -8,6 +8,11 @@ execute "make_bucket" do
   command "/usr/bin/s3cmd mb #{node.s3_bucket}"
 end
 
+# make sure the directory exists
+directory node.code_path do
+  recursive true
+end
+
 execute "s3pull" do
   command "/usr/bin/s3cmd get --recursive #{node.s3_bucket} #{node.code_path}"
 end
