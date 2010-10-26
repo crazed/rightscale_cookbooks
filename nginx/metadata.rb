@@ -11,3 +11,8 @@ attribute 'domain_name',
   :type => "string",
   :required => "required",
   :recipes => [ "nginx::default" ]
+attribute 'code_path',
+  :display_name => "Document Root",
+  :type => "string",
+  :required => "required",
+  :recipes => [ "nginx::default" ]
