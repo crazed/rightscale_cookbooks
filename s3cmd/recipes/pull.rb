@@ -11,8 +11,3 @@ end
 execute "s3pull" do
   command "/usr/bin/s3cmd get --recursive s3://#{node.s3_bucket} #{node.code_path}"
 end
-
-cron "s3sync" do
-  minute "*/#{node.sync_minutes}"
-  command "/usr/bin/s3cmd sync s3://#{node.s3_bucket} #{node.code_path}"
-end
