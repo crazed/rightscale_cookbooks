@@ -1,0 +1,45 @@
+{
+    "providing": {
+    },
+    "license": "All rights reserved",
+    "maintainer": "Datapipe",
+    "replacing": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "groupings": {
+    },
+    "description": "Installs/Configures wget",
+    "recommendations": {
+    },
+    "platforms": {
+    },
+    "attributes": {
+      "blog_type": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+          "drupal",
+          "wordpress"
+        ],
+        "default": "drupal",
+        "type": "string",
+        "recipes": [
+          "wget::blog"
+        ],
+        "description": "The blog engine you would like to use",
+        "display_name": "Blog Engine"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "version": "0.0.1",
+    "recipes": {
+      "wget::blog": "Downloads and configures a basic blogging platform"
+    },
+    "name": "wget",
+    "conflicting": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+  }
