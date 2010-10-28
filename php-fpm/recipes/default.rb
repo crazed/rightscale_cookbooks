@@ -75,5 +75,5 @@ template "/etc/php5/fpm/php5-fpm.conf" do
     :min_spare => tuning[node.ec2.instance_type]['min_spare'],
     :max_spare => tuning[node.ec2.instance_type]['max_spare']
   )
-  notifies :restart, resources(:service => "php5-fpm")
+  notifies :restart, resources(:service => "php5-fpm"), :immediately
 end
