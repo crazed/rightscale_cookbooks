@@ -20,7 +20,7 @@ end
 template "/tmp/grants.sql" do
   source "grants.erb"
   variables(:user => node.blog.mysql_user, :pass => node.blog.mysql_pass, :database => node.blog.database)
-  notifies :run, resources(:execute => "mysql grants") 
+  notifies :run, resources(:execute => "mysql grants"), :immediately
 end
 
 case node.blog.engine
