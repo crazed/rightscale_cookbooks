@@ -26,9 +26,9 @@ default[:mysql][:bind_address]         = ipaddress
 default[:mysql][:datadir]              = "/var/lib/mysql"
 
 if attribute?(:ec2)
-  default[:mysql][:ec2_path]    = "/ebs/mysql"
-  default[:mysql][:ebs_vol_dev] = "/dev/ebs_vg/striped_lv"
-  default[:mysql][:ebs_vol_size] = 1
+  default[:mysql][:ec2_path]    = "/mnt/mysql"
+  default[:mysql][:ebs_vol_dev] = "/dev/sdi"
+  default[:mysql][:ebs_vol_size] = 50
 end
 
 # Tunables
