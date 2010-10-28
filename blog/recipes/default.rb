@@ -28,6 +28,9 @@ when 'drupal'
   url = ''
 when 'wordpress'
   blog_wordpress "/srv/http" do
+    dbname node.blog.database
+    dbuser node.blog.mysql_user
+    dbpass node.blog.mysql_pass
     action :install
   end
 end

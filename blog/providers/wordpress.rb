@@ -18,4 +18,7 @@ action :install do
     group "www-data"
     mode "755"
   end
+  execute "preconfigure" do
+    command "curl http://localhost/wp-admin/setup-config.php?step=2 -d dbname=#{new_resource.dbname} -d uname=#{new_resource.dbuser} -d pwd=#{new_resource.dbpass} -d dbhost=localhost -d prefix=wp_"
+  end
 end
