@@ -18,6 +18,11 @@ attribute 'code_path',
   :type => "string",
   :required => "required",
   :recipes => [ "blog::default" ]
+attribute 'domain_name',
+  :display_name => "FQDN of your server",
+  :type => "string",
+  :required => "required",
+  :recipes => [ 'blog::default' ]
 attribute 'blog/mysql_user',
   :display_name => "MySQL User",
   :description => "MySQL User to create",

@@ -57,6 +57,18 @@
         "description": "Database to create",
         "display_name": "MySQL Database"
       },
+      "domain_name": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "blog::default"
+        ],
+        "display_name": "FQDN of your server"
+      },
       "blog/mysql_user": {
         "required": "optional",
         "calculated": false,

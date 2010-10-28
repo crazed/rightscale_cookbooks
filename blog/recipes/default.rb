@@ -35,4 +35,16 @@ when 'wordpress'
   end
 end
 
+service "nginx" do
+  action :stop
+end
 
+# add some basic clean url rewrites
+template "/etc/nginx/sites-available/default" do
+  source "nginx-default.erb"
+  variables(
+    :document_root => node.code_path,
+    :server_name => node.domain_name
+  )
+  notifies :start, resources(:service => "nginx"), :immediately
+end
