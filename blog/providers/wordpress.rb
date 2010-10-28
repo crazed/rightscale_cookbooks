@@ -3,7 +3,13 @@ action :install do
   remote_file "/tmp/wordpress.zip" do
     source "http://wordpress.org/latest.zip"
   end
-  execute "extraction" do
-    command "unzip /tmp/wordpress.zip -d #{new_resource.install_path}"
+  bash "install_wordpress" do
+    cwd "/tmp"
+    code <<-EOH
+    wget http://wordpress.org/latest.zip
+    unzip latest.zip
+    rm -rf #{new_resource.install_path}
+    mv /tmp/wordpress #{new_resource.install_path}
+    EOH
   end
 end
