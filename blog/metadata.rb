@@ -22,16 +22,17 @@ attribute 'mysql_user',
   :display_name => "MySQL User",
   :description => "MySQL User to create",
   :type => "string",
-  :required => "required",
-  :recipes => [ 'blog::default' ]
+  :recipes => [ 'blog::default' ],
+  :default => 'blog'
 attribute 'mysql_pass',
   :display_name => "MySQL Password",
   :description => "MySQL password to use",
   :type => "string",
-  :required => "required",
-  :recipes => [ 'blog::default' ]
+  :recipes => [ 'blog::default' ],
+  :default => 'blog'
 attribute 'mysql_database',
   :display_name => "MySQL Database",
   :description => "Database to create",
   :type => "string",
+  :recipes => [ 'blog::default' ],
   :default => "blog"

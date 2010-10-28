@@ -15,11 +15,12 @@
     },
     "attributes": {
       "mysql_pass": {
-        "required": "required",
+        "required": "optional",
         "calculated": false,
         "choice": [
 
         ],
+        "default": "blog",
         "type": "string",
         "recipes": [
           "blog::default"
@@ -36,7 +37,7 @@
         "default": "blog",
         "type": "string",
         "recipes": [
-
+          "blog::default"
         ],
         "description": "Database to create",
         "display_name": "MySQL Database"
@@ -57,11 +58,12 @@
         "display_name": "Blog Engine"
       },
       "mysql_user": {
-        "required": "required",
+        "required": "optional",
         "calculated": false,
         "choice": [
 
         ],
+        "default": "blog",
         "type": "string",
         "recipes": [
           "blog::default"
