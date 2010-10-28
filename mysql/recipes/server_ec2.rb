@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-
+Chef::Log.info("Entering the ec2-server stuff..")
 if (node[:ec2] && ! FileTest.directory?(node[:mysql][:ec2_path]))
 
   service "mysql" do
@@ -30,6 +30,11 @@ if (node[:ec2] && ! FileTest.directory?(node[:mysql][:ec2_path]))
   end
 
   directory node[:mysql][:ec2_path] do
+    owner "mysql"
+    group "mysql"
+  end
+
+  directory node[:mysql][:datadir] do
     owner "mysql"
     group "mysql"
   end
