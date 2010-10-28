@@ -10,10 +10,10 @@ action :install do
     unzip latest.zip
     rm -rf #{new_resource.install_path}
     mv /tmp/wordpress #{new_resource.install_path}
+    chown -R www-data:www-data #{new_resource.install_path}
     EOH
   end
   directory new_resource.install_path do
-    recursive true
     owner "www-data"
     group "www-data"
     mode "755"
