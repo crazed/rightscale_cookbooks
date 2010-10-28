@@ -13,6 +13,7 @@ action :install do
     EOH
   end
   directory new_resource.install_path do
+    recursive true
     owner "www-data"
     group "www-data"
     mode "755"
