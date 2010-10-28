@@ -18,3 +18,20 @@ attribute 'code_path',
   :type => "string",
   :required => "required",
   :recipes => [ "blog::default" ]
+attribute 'mysql_user',
+  :display_name => "MySQL User",
+  :description => "MySQL User to create",
+  :type => "string",
+  :required => "required",
+  :recipes => [ 'blog::default' ]
+attribute 'mysql_pass',
+  :display_name => "MySQL Password",
+  :description => "MySQL password to use",
+  :type => "string",
+  :required => "required",
+  :recipes => [ 'blog::default' ]
+attribute 'mysql_database',
+  :display_name => "MySQL Database",
+  :description => "Database to create",
+  :type => "string",
+  :default => "blog"

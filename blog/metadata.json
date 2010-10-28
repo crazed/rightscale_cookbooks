@@ -14,6 +14,33 @@
     "platforms": {
     },
     "attributes": {
+      "mysql_pass": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "blog::default"
+        ],
+        "description": "MySQL password to use",
+        "display_name": "MySQL Password"
+      },
+      "mysql_database": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "blog",
+        "type": "string",
+        "recipes": [
+
+        ],
+        "description": "Database to create",
+        "display_name": "MySQL Database"
+      },
       "blog_type": {
         "required": "recommended",
         "calculated": false,
@@ -28,6 +55,19 @@
         ],
         "description": "The blog engine you would like to use",
         "display_name": "Blog Engine"
+      },
+      "mysql_user": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "blog::default"
+        ],
+        "description": "MySQL User to create",
+        "display_name": "MySQL User"
       },
       "code_path": {
         "required": "required",

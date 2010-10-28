@@ -7,6 +7,22 @@
 # All rights reserved - Do Not Redistribute
 #
 
+execute "remove grants.sql" do
+  command "rm -f /tmp/grants.sql"
+  action :nothing
+end
+
+execute "mysql grants" do
+  command "mysql -u root < /tmp/grants.sql"
+  action :nothing
+end
+
+template "/tmp/grants.sql" do
+  source "grants.erb"
+  variables(:user => node.mysql_user, :pass => node.mysql_pass)
+  notifies :run, resources(:execute => "mysql grants") 
+end
+
 case node.blog_type
 when 'drupal'
   url = ''
