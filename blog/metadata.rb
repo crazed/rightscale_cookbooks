@@ -5,7 +5,7 @@ description      "Installs/Configures blog"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "blog::default", "Downloads and configures a basic blogging platform"
-attribute 'blog_type',
+attribute 'blog/type',
   :display_name => "Blog Engine",
   :description => "The blog engine you would like to use",
   :choice => [ 'drupal', 'wordpress' ],
@@ -18,19 +18,19 @@ attribute 'code_path',
   :type => "string",
   :required => "required",
   :recipes => [ "blog::default" ]
-attribute 'mysql_user',
+attribute 'blog/mysql_user',
   :display_name => "MySQL User",
   :description => "MySQL User to create",
   :type => "string",
   :recipes => [ 'blog::default' ],
   :default => 'blog'
-attribute 'mysql_pass',
+attribute 'blog/mysql_pass',
   :display_name => "MySQL Password",
   :description => "MySQL password to use",
   :type => "string",
   :recipes => [ 'blog::default' ],
   :default => 'blog'
-attribute 'mysql_database',
+attribute 'blog/database',
   :display_name => "MySQL Database",
   :description => "Database to create",
   :type => "string",

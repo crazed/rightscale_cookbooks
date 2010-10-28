@@ -2,10 +2,10 @@
     "providing": {
     },
     "license": "All rights reserved",
-    "maintainer": "YOUR_COMPANY_NAME",
+    "maintainer": "Datapipe",
     "replacing": {
     },
-    "maintainer_email": "YOUR_EMAIL",
+    "maintainer_email": "afeid@datapipe.com",
     "groupings": {
     },
     "description": "Installs/Configures mysql",
@@ -14,6 +14,18 @@
     "platforms": {
     },
     "attributes": {
+      "mysql/rootpw": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+
+        ],
+        "display_name": "MySQL Root Password"
+      }
     },
     "suggestions": {
     },
