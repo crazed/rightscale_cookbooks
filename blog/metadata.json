@@ -14,20 +14,6 @@
     "platforms": {
     },
     "attributes": {
-      "blog/mysql_database": {
-        "required": "optional",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "default": "blog",
-        "type": "string",
-        "recipes": [
-          "blog::default"
-        ],
-        "description": "Database to create",
-        "display_name": "MySQL Database"
-      },
       "blog/mysql_pass": {
         "required": "optional",
         "calculated": false,
@@ -56,6 +42,20 @@
         ],
         "description": "The blog engine you would like to use",
         "display_name": "Blog Engine"
+      },
+      "blog/database": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "blog",
+        "type": "string",
+        "recipes": [
+          "blog::default"
+        ],
+        "description": "Database to create",
+        "display_name": "MySQL Database"
       },
       "blog/mysql_user": {
         "required": "optional",
@@ -92,7 +92,7 @@
     "recipes": {
       "blog::default": "Downloads and configures a basic blogging platform"
     },
-    "name": "blog/",
+    "name": "blog",
     "conflicting": {
     },
     "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
