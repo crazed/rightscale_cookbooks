@@ -23,7 +23,7 @@ template "/tmp/grants.sql" do
   notifies :run, resources(:execute => "mysql grants") 
 end
 
-case node.blog.type
+case node.blog.engine
 when 'drupal'
   url = ''
 when 'wordpress'

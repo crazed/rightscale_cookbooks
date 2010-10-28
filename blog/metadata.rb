@@ -5,7 +5,7 @@ description      "Installs/Configures blog"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "blog::default", "Downloads and configures a basic blogging platform"
-attribute 'blog/type',
+attribute 'blog/engine',
   :display_name => "Blog Engine",
   :description => "The blog engine you would like to use",
   :choice => [ 'drupal', 'wordpress' ],

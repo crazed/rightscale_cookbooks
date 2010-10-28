@@ -28,7 +28,7 @@
         "description": "MySQL password to use",
         "display_name": "MySQL Password"
       },
-      "blog/type": {
+      "blog/engine": {
         "required": "recommended",
         "calculated": false,
         "choice": [
