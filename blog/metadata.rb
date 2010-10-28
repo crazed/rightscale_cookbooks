@@ -13,3 +13,8 @@ attribute 'blog_type',
   :required => "recommended",
   :recipes => [ 'blog::default' ],
   :default => 'drupal'
+attribute 'code_path',
+  :display_name => "Document Root",
+  :type => "string",
+  :required => "required",
+  :recipes => [ "blog::default" ]

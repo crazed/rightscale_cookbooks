@@ -8,7 +8,7 @@
     "maintainer_email": "afeid@datapipe.com",
     "groupings": {
     },
-    "description": "Installs/Configures wget",
+    "description": "Installs/Configures blog",
     "recommendations": {
     },
     "platforms": {
@@ -24,10 +24,22 @@
         "default": "drupal",
         "type": "string",
         "recipes": [
-          "wget::blog"
+          "blog::default"
         ],
         "description": "The blog engine you would like to use",
         "display_name": "Blog Engine"
+      },
+      "code_path": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "blog::default"
+        ],
+        "display_name": "Document Root"
       }
     },
     "suggestions": {
@@ -36,9 +48,9 @@
     },
     "version": "0.0.1",
     "recipes": {
-      "wget::blog": "Downloads and configures a basic blogging platform"
+      "blog::default": "Downloads and configures a basic blogging platform"
     },
-    "name": "wget",
+    "name": "blog",
     "conflicting": {
     },
     "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
