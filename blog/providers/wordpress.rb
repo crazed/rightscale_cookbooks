@@ -12,4 +12,9 @@ action :install do
     mv /tmp/wordpress #{new_resource.install_path}
     EOH
   end
+  directory new_resource.install_path do
+    owner "www-data"
+    group "www-data"
+    mode "755"
+  end
 end
