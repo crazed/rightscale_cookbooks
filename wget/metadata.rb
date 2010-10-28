@@ -10,6 +10,6 @@ attribute 'blog_type',
   :description => "The blog engine you would like to use",
   :choice => [ 'drupal', 'wordpress' ],
   :type => "string",
-  :required => "required",
+  :required => "recommended",
   :recipes => [ 'wget::blog' ],
   :default => 'drupal'

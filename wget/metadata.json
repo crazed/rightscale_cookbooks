@@ -15,7 +15,7 @@
     },
     "attributes": {
       "blog_type": {
-        "required": "required",
+        "required": "recommended",
         "calculated": false,
         "choice": [
           "drupal",
