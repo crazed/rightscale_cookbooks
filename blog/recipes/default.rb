@@ -25,9 +25,14 @@ end
 
 case node.blog.engine
 when 'drupal'
-  url = ''
+  blog_drupal node.code_path do
+    dbname node.blog.database
+    dbuser node.blog.mysql_user
+    dbpass node.blog.mysql_pass
+    action :install
+  end
 when 'wordpress'
-  blog_wordpress "/srv/http" do
+  blog_wordpress node.code_path do
     dbname node.blog.database
     dbuser node.blog.mysql_user
     dbpass node.blog.mysql_pass
