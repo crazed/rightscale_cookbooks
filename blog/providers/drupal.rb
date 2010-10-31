@@ -9,11 +9,13 @@ action :install do
 
   git "/opt/datapipe/drush" do
     repository "git://git.drupalcode.org/project/drush.git"
+    action :checkout
   end
 
   git "/opt/datapipe/drush/commands/drush_make" do
     repository "git://git.drupalcode.org/project/drush_make.git"
     revision "6.x-2.x" # note: HEAD/master were empty last I checked
+    action :checkout
   end
   
   # setup the drush make file
