@@ -32,6 +32,7 @@ action :install do
     /opt/datapipe/drush/drush make --prepare-install drupal.make #{node.code_path}
     rm -f /tmp/drupal.make
     chown -R www-data:www-data #{node.code_path}
+    ln -s /opt/datapipe/drush/drush /usr/local/bin
     EOH
   end
 
