@@ -107,5 +107,5 @@
     "name": "blog",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+    "long_description": "= DESCRIPTION:\nThis will install wordpress or drupal based off the value of node.blog.engine. Once Drupal 7 comes out, drush will be used to fully configure a new site. Currently you have to enter the mysql credentials for drupal.\n\n= REQUIREMENTS:\nNginx and PHP configured.\n\n= ATTRIBUTES:\n- blog.engine, can be 'wordpress' or 'drupal', determines which provider will be used for blog configuration.\n- blog.dbuser, sets the database user for the blog\n- blog.dbpass, sets the database user's password for the blog\n- blog.dbname, sets the database host to use\n\n= USAGE:\n\n"
   }

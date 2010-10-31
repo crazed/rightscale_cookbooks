@@ -38,5 +38,5 @@
     "name": "mysql",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+    "long_description": "= DESCRIPTION:\nThis will install MySQL and set the root password. This also creates /root/.my.cnf with proper credentials to allow easy command line access to MySQL.\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\nmysql.rootpw, this is the root password to set\n\n= USAGE:\n\n"
   }

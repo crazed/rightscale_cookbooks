@@ -1,8 +1,14 @@
 = DESCRIPTION:
+This will install wordpress or drupal based off the value of node.blog.engine. Once Drupal 7 comes out, drush will be used to fully configure a new site. Currently you have to enter the mysql credentials for drupal.
 
 = REQUIREMENTS:
+Nginx and PHP configured.
 
 = ATTRIBUTES:
+- blog.engine, can be 'wordpress' or 'drupal', determines which provider will be used for blog configuration.
+- blog.dbuser, sets the database user for the blog
+- blog.dbpass, sets the database user's password for the blog
+- blog.dbname, sets the database host to use
 
 = USAGE:
 
