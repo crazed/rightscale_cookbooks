@@ -19,7 +19,7 @@ attribute 'code_path',
   :required => "required",
   :recipes => [ "blog::default" ]
 attribute 'domain_name',
-  :display_name => "FQDN of your server",
+  :display_name => "Domain",
   :type => "string",
   :required => "required",
   :recipes => [ 'blog::default' ]

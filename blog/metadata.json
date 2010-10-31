@@ -67,7 +67,7 @@
         "recipes": [
           "blog::default"
         ],
-        "display_name": "FQDN of your server"
+        "display_name": "Domain"
       },
       "blog/mysql_user": {
         "required": "optional",
