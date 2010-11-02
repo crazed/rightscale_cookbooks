@@ -1,3 +1,3 @@
 package "sqlite3"
-package "libsqlite3"
+package "libsqlite3-dev"
 gem_package "sqlite3-ruby"
