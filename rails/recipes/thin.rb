@@ -2,6 +2,8 @@ gem_package "thin" do
   action :install
 end
 
+execute "thin install"
+
 # bug with rails 2.3.8 + thin/rack
 gem_package "rack" do
   action :remove
@@ -17,8 +19,4 @@ template "/etc/thin/default.yml" do
     :app_path => node.rails.app_path,
     :thin_servers => node.rails.thin_servers
   )
-end
-
-service "thin" do
-  action [ :start, :enable ]
 end
