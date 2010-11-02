@@ -1,3 +1,5 @@
 upstream thin_cluster {
-        server unix:/tmp/thin.sock;
+	<% @sockets.each do |socket| -%>
+        server unix:<% socket %>;
+	<% end -%>
 }
