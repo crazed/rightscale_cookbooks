@@ -1,6 +1,6 @@
 package "nginx"
 service "nginx" do
-  action :stop
+  action :start
 end
 
 sockets = Array.new
@@ -9,15 +9,19 @@ for i in 0..Integer(node.rails.thin_servers)-1
 end
 
 template "/etc/nginx/conf.d/thin.conf" do
-  source "thin.conf.erb"
-  variables(:sockets => sockets)
   owner "root"
   group "root"
   mode "644"
+  source "thin.conf.erb"
+  variables(:sockets => sockets)
+  notifies :restart, resources(:service => "nginx")
 end
 
 template "/etc/nginx/sites-available/default" do
+  owner "root"
+  group "root"
+  mode "644"
   source "nginx-default.erb"
   variables(:app_path => node.rails.app_path)
-  notifies :start, resources(:service => "nginx")
+  notifies :restart, resources(:service => "nginx")
 end
