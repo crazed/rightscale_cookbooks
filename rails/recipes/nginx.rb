@@ -4,7 +4,7 @@ service "nginx" do
 end
 
 sockets = Array.new
-for i in (0..(node.rails.thin_servers-1))
+for i in (0..node.rails.thin_servers)
   sockets << "/tmp/thin.#{i}.sock"
 end
 
