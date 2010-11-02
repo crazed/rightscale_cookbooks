@@ -20,6 +20,9 @@ gem_package "rails" do
   version "2.3.8"
 end
 
+gem_package "rspec-rails"
+gem_package "yard"
+
 # this isn't too robust.. but shouldn't run if using RightScale's images
 bash "install gems" do
   not_if "which gem"
