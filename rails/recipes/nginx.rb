@@ -10,7 +10,7 @@ end
 
 template "/etc/nginx/conf.d/thin.conf" do
   source "thin.conf.erb"
-  variables(:thin_sockets => sockets)
+  variables(:sockets => sockets)
   owner "root"
   group "root"
   mode "644"
