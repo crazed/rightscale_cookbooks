@@ -29,6 +29,19 @@
         "description": "specifies the path to your application",
         "display_name": "Application Path"
       },
+      "rails/repo": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rails::deploy"
+        ],
+        "description": "Git repo to pull from for your application",
+        "display_name": "Application Git Repo"
+      },
       "rails/thin_servers": {
         "required": "optional",
         "calculated": false,
@@ -54,7 +67,8 @@
       "rails::sqlite": "installs sqlite3 and ruby gem",
       "rails::thin": "installs and configures thin",
       "rails::nginx": "installs and configures nginx to pass traffic down to thin",
-      "rails::ruby": "installs various ruby dependencies"
+      "rails::ruby": "installs various ruby dependencies",
+      "rails::deploy": "deploys code from git repo"
     },
     "name": "rails",
     "conflicting": {
