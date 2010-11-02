@@ -6,6 +6,5 @@ deploy node.rails.app_path do
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => "production"
   action :deploy
-  notifies :start, resources(:service => "thin")
 end
 
