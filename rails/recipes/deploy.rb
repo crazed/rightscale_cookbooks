@@ -21,7 +21,7 @@ deploy node.rails.app_path do
   repo node.rails.repo
   migrate true
   @symlink_before_migrate = {}
-  migration_command "rake gems:install db:migrate"
+  migration_command "rake db:migrate"
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => "production"
   restart_command "thin restart --all /etc/thin"
