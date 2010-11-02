@@ -1,0 +1,5 @@
+upstream thin_cluster {
+	<% 0.upto(@thin_servers-1) do |i| -%>
+        server unix:/tmp/thin.cpa.<%= i %>.sock;
+	<% end -%>
+}

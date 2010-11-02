@@ -1,0 +1,63 @@
+{
+    "providing": {
+    },
+    "license": "All rights reserved",
+    "maintainer": "Datapipe",
+    "replacing": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "groupings": {
+    },
+    "description": "Installs/Configures rails",
+    "recommendations": {
+    },
+    "platforms": {
+    },
+    "attributes": {
+      "rails/app_path": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/srv/app",
+        "type": "string",
+        "recipes": [
+          "rails::nginx",
+          "rails::thin"
+        ],
+        "description": "specifies the path to your application",
+        "display_name": "Application Path"
+      },
+      "rails/thin_servers": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "3",
+        "type": "string",
+        "recipes": [
+          "rails::nginx",
+          "rails::thin"
+        ],
+        "description": "sets the number of thin servers to start up",
+        "display_name": "Number of Thin Servers"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "version": "0.0.1",
+    "recipes": {
+      "rails::sqlite": "installs sqlite3 and ruby gem",
+      "rails::thin": "installs and configures thin",
+      "rails::nginx": "installs and configures nginx to pass traffic down to thin",
+      "rails::ruby": "installs various ruby dependencies"
+    },
+    "name": "rails",
+    "conflicting": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+  }
