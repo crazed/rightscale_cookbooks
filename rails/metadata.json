@@ -24,7 +24,8 @@
         "type": "string",
         "recipes": [
           "rails::nginx",
-          "rails::thin"
+          "rails::thin",
+          "rails::deploy"
         ],
         "description": "specifies the path to your application",
         "display_name": "Application Path"
