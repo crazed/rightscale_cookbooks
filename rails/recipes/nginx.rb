@@ -4,12 +4,8 @@ service "nginx" do
 end
 
 sockets = Array.new
-for i in 0..Integer(node.rails.thin_servers)
+for i in 0..Integer(node.rails.thin_servers)-1
   sockets << "/tmp/thin.#{i}.sock"
-end
-
-sockets.each do |socket|
-  Chef::Log.info("Socket: #{socket}")
 end
 
 template "/etc/nginx/conf.d/thin.conf" do
