@@ -8,6 +8,10 @@ for i in 0..Integer(node.rails.thin_servers)
   sockets << "/tmp/thin.#{i}.sock"
 end
 
+sockets.each do |socket|
+  Chef::Log.info("Socket: #{socket}")
+end
+
 template "/etc/nginx/conf.d/thin.conf" do
   source "thin.conf.erb"
   variables(:sockets => sockets)
