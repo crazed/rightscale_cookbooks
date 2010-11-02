@@ -59,7 +59,7 @@
         "description": "sets the number of thin servers to start up",
         "display_name": "Number of Thin Servers"
       },
-      "railes/rake_tasks": {
+      "rails/rake_tasks": {
         "required": "optional",
         "calculated": false,
         "choice": [

@@ -27,7 +27,7 @@ attribute "rails/repo",
   :type => "string",
   :required => "required",
   :recipes => [ 'rails::deploy' ]
-attribute "railes/rake_tasks",
+attribute "rails/rake_tasks",
   :display_name => "Rake Tasks",
   :description => "Space separated rake tasks to execute",
   :type => "string",
