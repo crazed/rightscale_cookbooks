@@ -65,7 +65,7 @@
         "choice": [
 
         ],
-        "default": "db:create db:migrate",
+        "default": "gems:install db:create db:migrate",
         "type": "string",
         "recipes": [
           "rails::rake"

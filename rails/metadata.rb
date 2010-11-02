@@ -31,5 +31,5 @@ attribute "rails/rake_tasks",
   :display_name => "Rake Tasks",
   :description => "Space separated rake tasks to execute",
   :type => "string",
-  :default => "db:create db:migrate",
+  :default => "gems:install db:create db:migrate",
   :recipes => [ 'rails::rake' ]
