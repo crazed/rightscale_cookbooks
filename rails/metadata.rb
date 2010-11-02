@@ -9,6 +9,7 @@ recipe "rails::sqlite", "installs sqlite3 and ruby gem"
 recipe "rails::thin", "installs and configures thin"
 recipe "rails::nginx", "installs and configures nginx to pass traffic down to thin"
 recipe "rails::deploy", "deploys code from git repo"
+recipe "rails::rake", "executes rake tasks"
 attribute "rails/thin_servers",
   :display_name => "Number of Thin Servers",
   :description => "sets the number of thin servers to start up",
@@ -19,11 +20,16 @@ attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
   :default => "/srv/app",
-  :recipes => [ 'rails::nginx', 'rails::thin', 'rails::deploy' ]
+  :recipes => [ 'rails::nginx', 'rails::thin', 'rails::deploy', 'rails::rake' ]
 attribute "rails/repo",
   :display_name => "Application Git Repo",
   :description => "Git repo to pull from for your application",
   :type => "string",
   :required => "required",
   :recipes => [ 'rails::deploy' ]
-
+attribute "railes/rake_tasks",
+  :display_name => "Rake Tasks",
+  :description => "Space separated rake tasks to execute",
+  :type => "string",
+  :default => "db:create db:migrate",
+  :recipes => [ 'rails::rake' ]
