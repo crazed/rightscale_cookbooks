@@ -65,13 +65,29 @@
         "choice": [
 
         ],
-        "default": "gems:install db:create db:migrate",
+        "default": "gems:install db:migrate",
         "type": "string",
         "recipes": [
           "rails::rake"
         ],
         "description": "Space separated rake tasks to execute",
         "display_name": "Rake Tasks"
+      },
+      "rails/environment": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "production",
+        "type": "string",
+        "recipes": [
+          "rails::thin",
+          "rails::rake",
+          "rails::deploy"
+        ],
+        "description": "The environment you want to install with",
+        "display_name": "Rails Environment"
       }
     },
     "suggestions": {

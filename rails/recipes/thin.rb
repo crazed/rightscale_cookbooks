@@ -17,6 +17,7 @@ template "/etc/thin/default.yml" do
   source "yml.erb"
   variables(
     :app_path => node.rails.app_path,
+    :environment => node.rails.environment,
     :thin_servers => node.rails.thin_servers
   )
 end

@@ -8,7 +8,7 @@ log: log/thin.log
 max_conns: 1024
 require: []
 
-environment: development
+environment: <%= @environment %>
 max_persistent_conns: 512
 servers: <%= @thin_servers %>
 daemonize: true

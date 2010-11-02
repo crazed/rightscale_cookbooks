@@ -31,5 +31,11 @@ attribute "rails/rake_tasks",
   :display_name => "Rake Tasks",
   :description => "Space separated rake tasks to execute",
   :type => "string",
-  :default => "gems:install db:create db:migrate",
+  :default => "gems:install db:migrate",
   :recipes => [ 'rails::rake' ]
+attribute "rails/environment",
+  :display_name => "Rails Environment",
+  :description => "The environment you want to install with",
+  :type => "string",
+  :default => "production",
+  :recipes => [ 'rails::thin', 'rails::rake', 'rails::deploy' ]
