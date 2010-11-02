@@ -16,6 +16,10 @@ execute "gem update --system" do
   only_if "which gem"
 end
 
+gem_package "rails" do
+  version "2.3.8"
+end
+
 # this isn't too robust.. but shouldn't run if using RightScale's images
 bash "install gems" do
   not_if "which gem"
