@@ -1,5 +1,5 @@
 --- 
-pid: tmp/pids/thin.pid
+pid: <%= @app_path %>/shared/tmp/pids/thin.pid
 address: 0.0.0.0
 timeout: 30
 wait: 30
@@ -13,4 +13,4 @@ max_persistent_conns: 512
 servers: <%= @thin_servers %>
 daemonize: true
 socket: /tmp/thin.sock
-chdir: <%= @app_path %>
+chdir: <%= @app_path %>/current
