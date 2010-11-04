@@ -28,7 +28,7 @@ end
 
 service "nginx" do
   supports [ :start, :stop, :reload, :status, :enable ]
-  start_command "/usr/sbin/nginx"
+  start_command "/usr/sbin/nginx &"
   running true
   action :start
   pattern "nginx: master"
