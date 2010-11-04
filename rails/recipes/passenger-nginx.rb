@@ -29,6 +29,7 @@ end
 service "nginx" do
   supports [ :start, :stop, :reload, :status, :enable ]
   start_command "/etc/init.d/nginx start"
-  action [ :enable, :start ]
+  running true
+  action :start
   pattern "nginx: master"
 end
