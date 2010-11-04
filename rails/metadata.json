@@ -26,7 +26,6 @@
           "rails::nginx",
           "rails::thin",
           "rails::deploy",
-          "rails::deploy-passenger",
           "rails::rake",
           "rails::passenger-nginx"
         ],
@@ -41,8 +40,7 @@
         ],
         "type": "string",
         "recipes": [
-          "rails::deploy",
-          "rails::deploy-passenger"
+          "rails::deploy"
         ],
         "description": "Git repo to pull from for your application",
         "display_name": "Application Git Repo"
@@ -88,7 +86,6 @@
           "rails::thin",
           "rails::rake",
           "rails::deploy",
-          "rails::deploy-passenger",
           "rails::passenger-nginx"
         ],
         "description": "The environment you want to install with",
