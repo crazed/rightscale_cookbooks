@@ -2,7 +2,7 @@ server {
         listen   80 default;
         server_name localhost;
 
-        root   <%= @app_path %>/public;
+        root   <%= @app_path %>/current/public;
 	passenger_enabled on;
 	rails_env <%= @environment %>;
 }

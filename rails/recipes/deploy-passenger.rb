@@ -24,7 +24,11 @@ deploy node.rails.app_path do
   migration_command "rake gems:install db:migrate"
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => node.rails.environment
-  restart_command "service nginx reload"
+  if File.exists? "/etc/init.d/nginx"
+    restart_command "service nginx reload"
+  else
+    restart_command ""
+  end
   action :deploy
 end
 
