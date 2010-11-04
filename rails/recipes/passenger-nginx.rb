@@ -18,15 +18,15 @@ end
 
 package "nginx-brightbox"
 
-service "nginx" do
-  action :stop
-end
-
 template "/etc/nginx/sites-available/default" do
   owner "root"
   group "root"
   mode "644"
   source "nginx-passenger.erb"
   variables(:app_path => node.rails.app_path, :environment => node.rails.environment)
-  notifies :start, resources(:service => "nginx")
+end
+
+service "nginx" do
+  supports [ :start, :stop, :reload, :status, :enable ]
+  action [ :enable, :start ]
 end
