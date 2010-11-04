@@ -12,10 +12,6 @@ package "ruby-dev"
 package "libopenssl-ruby"
 package "build-essential"
 
-execute "gem update --system" do
-  only_if "which gem"
-end
-
 gem_package "rails" do
   version "2.3.8"
 end
