@@ -103,6 +103,7 @@
       "rails::rake": "executes rake tasks",
       "rails::thin": "installs and configures thin",
       "rails::nginx": "installs and configures nginx to pass traffic down to thin",
+      "rails::rollback": "rollback to previous code revision",
       "rails::passenger-nginx": "installs passenger and nginx",
       "rails::ruby": "installs various ruby dependencies",
       "rails::deploy": "deploys code from git repo"

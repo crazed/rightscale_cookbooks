@@ -12,6 +12,7 @@ recipe "rails::deploy", "deploys code from git repo"
 recipe "rails::rake", "executes rake tasks"
 recipe "rails::passenger-nginx", "installs passenger and nginx"
 recipe "rails::mysql", "installs mysql gem"
+recipe "rails::rollback", "rollback to previous code revision"
 attribute "rails/thin_servers",
   :display_name => "Number of Thin Servers",
   :description => "sets the number of thin servers to start up",
