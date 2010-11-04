@@ -1,0 +1,7 @@
+server {
+        listen   80 default;
+        server_name localhost;
+
+        root   <%= @app_path %>/public;
+	passenger_enabled on;
+}
