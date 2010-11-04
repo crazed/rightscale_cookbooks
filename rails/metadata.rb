@@ -10,6 +10,7 @@ recipe "rails::thin", "installs and configures thin"
 recipe "rails::nginx", "installs and configures nginx to pass traffic down to thin"
 recipe "rails::deploy", "deploys code from git repo"
 recipe "rails::rake", "executes rake tasks"
+recipe "rails::passenger-nginx", "installs passenger and nginx"
 attribute "rails/thin_servers",
   :display_name => "Number of Thin Servers",
   :description => "sets the number of thin servers to start up",
@@ -20,7 +21,7 @@ attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
   :default => "/srv/app",
-  :recipes => [ 'rails::nginx', 'rails::thin', 'rails::deploy', 'rails::rake' ]
+  :recipes => [ 'rails::nginx', 'rails::thin', 'rails::deploy', 'rails::rake', 'rails::passenger-nginx' ]
 attribute "rails/repo",
   :display_name => "Application Git Repo",
   :description => "Git repo to pull from for your application",
