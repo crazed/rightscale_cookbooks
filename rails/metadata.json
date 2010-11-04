@@ -85,7 +85,8 @@
         "recipes": [
           "rails::thin",
           "rails::rake",
-          "rails::deploy"
+          "rails::deploy",
+          "rails::passenger-nginx"
         ],
         "description": "The environment you want to install with",
         "display_name": "Rails Environment"

@@ -4,4 +4,5 @@ server {
 
         root   <%= @app_path %>/public;
 	passenger_enabled on;
+	rails_env <%= @environment %>;
 }

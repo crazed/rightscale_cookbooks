@@ -39,4 +39,4 @@ attribute "rails/environment",
   :description => "The environment you want to install with",
   :type => "string",
   :default => "production",
-  :recipes => [ 'rails::thin', 'rails::rake', 'rails::deploy' ]
+  :recipes => [ 'rails::thin', 'rails::rake', 'rails::deploy', 'rails::passenger-nginx' ]
