@@ -26,10 +26,11 @@ template "/etc/nginx/sites-available/default" do
   variables(:app_path => node.rails.app_path, :environment => node.rails.environment)
 end
 
-service "nginx" do
-  supports [ :start, :stop, :reload, :status, :enable ]
-  start_command "/etc/init.d/nginx start"
-  running true
-  action :start
-  pattern "nginx: master"
-end
+#service "nginx" do
+#  supports [ :start, :stop, :reload, :status, :enable ]
+#  start_command "/etc/init.d/nginx start"
+#  running true
+#  action :start
+#  pattern "nginx: master"
+#end
+execute "/etc/init.d/nginx start"
