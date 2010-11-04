@@ -28,5 +28,5 @@ template "/etc/nginx/sites-available/default" do
   mode "644"
   source "nginx-passenger.erb"
   variables(:app_path => node.rails.app_path, :environment => node.rails.environment)
-  notifies :restart, resources(:service => "nginx")
+  notifies :start, resources(:service => "nginx")
 end

@@ -26,6 +26,7 @@
           "rails::nginx",
           "rails::thin",
           "rails::deploy",
+          "rails::deploy-passenger",
           "rails::rake",
           "rails::passenger-nginx"
         ],
@@ -40,7 +41,8 @@
         ],
         "type": "string",
         "recipes": [
-          "rails::deploy"
+          "rails::deploy",
+          "rails::deploy-passenger"
         ],
         "description": "Git repo to pull from for your application",
         "display_name": "Application Git Repo"
@@ -86,6 +88,7 @@
           "rails::thin",
           "rails::rake",
           "rails::deploy",
+          "rails::deploy-passenger",
           "rails::passenger-nginx"
         ],
         "description": "The environment you want to install with",
@@ -98,6 +101,7 @@
     },
     "version": "0.0.1",
     "recipes": {
+      "rails::deploy-passenger": "deploys code from git repo",
       "rails::sqlite": "installs sqlite3 and ruby gem",
       "rails::rake": "executes rake tasks",
       "rails::thin": "installs and configures thin",
