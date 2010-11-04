@@ -33,4 +33,4 @@ end
 #  action :start
 #  pattern "nginx: master"
 #end
-execute "/etc/init.d/nginx start"
+execute "/etc/init.d/nginx2 start"
