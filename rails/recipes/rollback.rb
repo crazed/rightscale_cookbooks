@@ -5,7 +5,7 @@ deploy node.rails.app_path do
   migration_command "rake gems:install db:migrate"
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => node.rails.environment
-  restart_command "thin restart --all /etc/thin"
+  restart_command "service nginx reload"
   action :rollback
 end
 
