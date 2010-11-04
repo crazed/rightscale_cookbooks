@@ -12,6 +12,8 @@ package "ruby-dev"
 package "libopenssl-ruby"
 package "build-essential"
 
+execute "gem update --system"
+
 gem_package "rails" do
   version "2.3.8"
 end
