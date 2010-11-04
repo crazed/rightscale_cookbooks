@@ -29,4 +29,5 @@ end
 service "nginx" do
   supports [ :start, :stop, :reload, :status, :enable ]
   action [ :enable, :start ]
+  pattern "nginx: master"
 end
