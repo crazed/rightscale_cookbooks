@@ -17,6 +17,3 @@ execute "gem update --system"
 gem_package "rails" do
   version "2.3.8"
 end
-
-gem_package "rspec-rails"
-gem_package "yard"
