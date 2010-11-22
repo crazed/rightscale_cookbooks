@@ -14,6 +14,9 @@ package "build-essential"
 
 execute "gem update --system"
 
+# rightscale's mirrors are missing some updated gems
+execute "gem sources -a http://gems.rubyforge.org"
+
 gem_package "rails" do
   version "2.3.8"
 end
