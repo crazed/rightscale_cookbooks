@@ -3,7 +3,6 @@ package "libcurl4-openssl-dev"
 package "libssl-dev"
 package "zlib1g-dev"
 
-gem_package "passenger"
 
 # grab nginx from brightbox with passenger support built in
 bash "install nginx with passenger support" do

@@ -1,22 +1,13 @@
 package "git-core"
-directory "#{node.rails.app_path}/shared/system" do
-  recursive true
-  owner "root"
-  group "root"
-  mode "755"
+['system', 'log', 'tmp'].each do |dir|
+  directory "#{node.rails.app_path}/shared/#{dir}" do
+    recursive true
+    owner "root"
+    group "root"
+    mode "755"
+  end
 end
-directory "#{node.rails.app_path}/shared/log"do
-  recursive true
-  owner "root"
-  group "root"
-  mode "755"
-end
-directory "#{node.rails.app_path}/shared/tmp"do
-  recursive true
-  owner "root"
-  group "root"
-  mode "755"
-end
+
 deploy node.rails.app_path do
   repo node.rails.repo
   migrate true
