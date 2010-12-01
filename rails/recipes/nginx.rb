@@ -1,19 +1,14 @@
 package "nginx"
+
 service "nginx" do
-  action :start
+  action [:start, :enable]
 end
 
-sockets = Array.new
-for i in 0..Integer(node.rails.thin_servers)-1
-  sockets << "/tmp/thin.#{i}.sock"
-end
-
-template "/etc/nginx/conf.d/thin.conf" do
+template "/etc/nginx/conf.d/unicorn.conf" do
   owner "root"
   group "root"
   mode "644"
-  source "thin.conf.erb"
-  variables(:sockets => sockets)
+  source "unicorn.conf.erb"
   notifies :restart, resources(:service => "nginx")
 end
 

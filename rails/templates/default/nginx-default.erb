@@ -17,7 +17,7 @@ server {
                         rewrite (.*) $1.html break;
                 }
                 if (!-f $request_filename) {
-                        proxy_pass http://thin_cluster;
+                        proxy_pass http://unicorn;
                         break;
                 }
         }

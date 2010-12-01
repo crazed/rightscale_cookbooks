@@ -1,19 +1,39 @@
 {
-    "providing": {
-    },
-    "license": "All rights reserved",
-    "maintainer": "Datapipe",
     "replacing": {
     },
     "maintainer_email": "afeid@datapipe.com",
+    "description": "Installs/Configures rails",
+    "recipes": {
+      "rails::unicorn": "installs and configures unicorn",
+      "rails::sqlite": "installs sqlite3 and ruby gem",
+      "rails::mysql": "installs mysql gem",
+      "rails::rake": "executes rake tasks",
+      "rails::thin": "installs and configures thin",
+      "rails::nginx": "installs and configures nginx to pass traffic down to thin",
+      "rails::rollback": "rollback to previous code revision",
+      "rails::passenger-nginx": "installs passenger and nginx",
+      "rails::ruby": "installs various ruby dependencies",
+      "rails::deploy": "deploys code from git repo"
+    },
     "groupings": {
     },
-    "description": "Installs/Configures rails",
     "recommendations": {
     },
-    "platforms": {
-    },
     "attributes": {
+      "rails/workers": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "5",
+        "type": "string",
+        "recipes": [
+          "rails::unicorn"
+        ],
+        "display_name": "Number Unicorn Workers",
+        "description": "sets the number of workers to spawn for unicorn"
+      },
       "rails/app_path": {
         "required": "optional",
         "calculated": false,
@@ -29,8 +49,8 @@
           "rails::rake",
           "rails::passenger-nginx"
         ],
-        "description": "specifies the path to your application",
-        "display_name": "Application Path"
+        "display_name": "Application Path",
+        "description": "specifies the path to your application"
       },
       "rails/repo": {
         "required": "required",
@@ -42,8 +62,8 @@
         "recipes": [
           "rails::deploy"
         ],
-        "description": "Git repo to pull from for your application",
-        "display_name": "Application Git Repo"
+        "display_name": "Application Git Repo",
+        "description": "Git repo to pull from for your application"
       },
       "rails/thin_servers": {
         "required": "optional",
@@ -57,8 +77,8 @@
           "rails::nginx",
           "rails::thin"
         ],
-        "description": "sets the number of thin servers to start up",
-        "display_name": "Number of Thin Servers"
+        "display_name": "Number of Thin Servers",
+        "description": "sets the number of thin servers to start up"
       },
       "rails/rake_tasks": {
         "required": "optional",
@@ -71,8 +91,8 @@
         "recipes": [
           "rails::rake"
         ],
-        "description": "Space separated rake tasks to execute",
-        "display_name": "Rake Tasks"
+        "display_name": "Rake Tasks",
+        "description": "Space separated rake tasks to execute"
       },
       "rails/environment": {
         "required": "optional",
@@ -88,28 +108,23 @@
           "rails::deploy",
           "rails::passenger-nginx"
         ],
-        "description": "The environment you want to install with",
-        "display_name": "Rails Environment"
+        "display_name": "Rails Environment",
+        "description": "The environment you want to install with"
       }
     },
     "suggestions": {
     },
     "dependencies": {
     },
-    "version": "0.0.1",
-    "recipes": {
-      "rails::sqlite": "installs sqlite3 and ruby gem",
-      "rails::mysql": "installs mysql gem",
-      "rails::rake": "executes rake tasks",
-      "rails::thin": "installs and configures thin",
-      "rails::nginx": "installs and configures nginx to pass traffic down to thin",
-      "rails::rollback": "rollback to previous code revision",
-      "rails::passenger-nginx": "installs passenger and nginx",
-      "rails::ruby": "installs various ruby dependencies",
-      "rails::deploy": "deploys code from git repo"
-    },
-    "name": "rails",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "rails",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
   }

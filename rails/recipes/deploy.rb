@@ -15,8 +15,8 @@ deploy node.rails.app_path do
   migration_command "rake gems:install db:migrate"
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => node.rails.environment
-  if File.exists? "/etc/init.d/nginx"
-    restart_command "service nginx reload"
+  if File.exists? "/var/run/unicorn/unicorn.pid"
+    restart_command "kill -USR2 `cat /var/run/unicorn.pid`"
   else
     restart_command ""
   end

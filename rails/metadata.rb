@@ -13,12 +13,19 @@ recipe "rails::rake", "executes rake tasks"
 recipe "rails::passenger-nginx", "installs passenger and nginx"
 recipe "rails::mysql", "installs mysql gem"
 recipe "rails::rollback", "rollback to previous code revision"
+recipe "rails::unicorn", "installs and configures unicorn"
 attribute "rails/thin_servers",
   :display_name => "Number of Thin Servers",
   :description => "sets the number of thin servers to start up",
   :type => "string",
   :default => "3",
   :recipes => [ 'rails::nginx', 'rails::thin' ]
+attribute "rails/workers",
+  :display_name => "Number Unicorn Workers",
+  :description => "sets the number of workers to spawn for unicorn",
+  :type => "string",
+  :default => "5",
+  :recipes => [ 'rails::unicorn' ]
 attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
