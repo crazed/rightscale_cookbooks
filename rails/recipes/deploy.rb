@@ -1,5 +1,5 @@
 package "git-core"
-['system', 'log', 'tmp'].each do |dir|
+['system', 'log', 'tmp', 'pids'].each do |dir|
   directory "#{node.rails.app_path}/shared/#{dir}" do
     recursive true
     owner "root"
