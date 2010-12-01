@@ -1,7 +1,9 @@
 gem_package "unicorn"
 
 user "unicorn" do
-  system true
+  # system attribute seems to be missing in chef .8
+  #system true
+  shell "/bin/false"
 end
 
 directory "/etc/unicorn" do
