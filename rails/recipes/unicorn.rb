@@ -28,7 +28,7 @@ end
 
 service "unicorn" do
   supports [ :start, :stop, :reload, :restart ]
-  start_command "unicorn -c /etc/unicorn -E #{node.rails.environment} -D"
+  start_command "unicorn -c /etc/unicorn/unicorn.rb -E #{node.rails.environment} -D"
   stop_command "kill `cat /var/run/unicorn.pid`"
   reload_command "kill -USR2 `cat /var/run/unicorn.pid`"
   restart_command "kill `cat /var/run/unicorn.pid` && unicorn -c /etc/unicorn -E #{node.rails.environment} -D"
