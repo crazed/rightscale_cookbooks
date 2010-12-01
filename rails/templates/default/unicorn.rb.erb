@@ -2,7 +2,7 @@ worker_processes <%= @workers %>
 preload_app true
 listen '/var/run/unicorn/unicorn.sock'
 pid '/var/run/unicorn/unicorn.pid'
-working_directory <%= @app_path %>
+working_directory '<%= @app_path %>'
 
 # timeout any workers that haven't responded in 30 seconds
 timeout 30
