@@ -104,6 +104,7 @@
         "default": "production",
         "type": "string",
         "recipes": [
+          "rails::unicorn",
           "rails::thin",
           "rails::rake",
           "rails::deploy",
