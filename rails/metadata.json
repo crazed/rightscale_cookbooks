@@ -43,6 +43,7 @@
         "default": "/srv/app",
         "type": "string",
         "recipes": [
+          "rails::unicorn",
           "rails::nginx",
           "rails::thin",
           "rails::deploy",
