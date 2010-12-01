@@ -16,7 +16,7 @@ deploy node.rails.app_path do
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => node.rails.environment
   if File.exists? "/var/run/unicorn/unicorn.pid"
-    restart_command "kill -USR2 `cat /var/run/unicorn.pid`"
+    restart_command "kill -USR2 `cat /var/run/unicorn/unicorn.pid`"
   else
     restart_command ""
   end
