@@ -6,20 +6,12 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "rails::ruby", "installs various ruby dependencies"
 recipe "rails::sqlite", "installs sqlite3 and ruby gem"
-recipe "rails::thin", "installs and configures thin"
 recipe "rails::nginx", "installs and configures nginx to pass traffic down to thin"
 recipe "rails::deploy", "deploys code from git repo"
 recipe "rails::rake", "executes rake tasks"
-recipe "rails::passenger-nginx", "installs passenger and nginx"
 recipe "rails::mysql", "installs mysql gem"
 recipe "rails::rollback", "rollback to previous code revision"
 recipe "rails::unicorn", "installs and configures unicorn"
-attribute "rails/thin_servers",
-  :display_name => "Number of Thin Servers",
-  :description => "sets the number of thin servers to start up",
-  :type => "string",
-  :default => "3",
-  :recipes => [ 'rails::nginx', 'rails::thin' ]
 attribute "rails/workers",
   :display_name => "Number Unicorn Workers",
   :description => "sets the number of workers to spawn for unicorn",
@@ -30,7 +22,7 @@ attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
   :default => "/srv/app",
-  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::thin', 'rails::deploy', 'rails::rake', 'rails::passenger-nginx' ]
+  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::deploy', 'rails::rake' ]
 attribute "rails/repo",
   :display_name => "Application Git Repo",
   :description => "Git repo to pull from for your application",
@@ -48,4 +40,4 @@ attribute "rails/environment",
   :description => "The environment you want to install with",
   :type => "string",
   :default => "production",
-  :recipes => [ 'rails::unicorn', 'rails::thin', 'rails::rake', 'rails::deploy', 'rails::passenger-nginx' ]
+  :recipes => [ 'rails::unicorn', 'rails::rake', 'rails::deploy' ]

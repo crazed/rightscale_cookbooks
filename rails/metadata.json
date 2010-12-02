@@ -8,10 +8,8 @@
       "rails::sqlite": "installs sqlite3 and ruby gem",
       "rails::mysql": "installs mysql gem",
       "rails::rake": "executes rake tasks",
-      "rails::thin": "installs and configures thin",
       "rails::nginx": "installs and configures nginx to pass traffic down to thin",
       "rails::rollback": "rollback to previous code revision",
-      "rails::passenger-nginx": "installs passenger and nginx",
       "rails::ruby": "installs various ruby dependencies",
       "rails::deploy": "deploys code from git repo"
     },
@@ -45,10 +43,8 @@
         "recipes": [
           "rails::unicorn",
           "rails::nginx",
-          "rails::thin",
           "rails::deploy",
-          "rails::rake",
-          "rails::passenger-nginx"
+          "rails::rake"
         ],
         "display_name": "Application Path",
         "description": "specifies the path to your application"
@@ -65,21 +61,6 @@
         ],
         "display_name": "Application Git Repo",
         "description": "Git repo to pull from for your application"
-      },
-      "rails/thin_servers": {
-        "required": "optional",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "default": "3",
-        "type": "string",
-        "recipes": [
-          "rails::nginx",
-          "rails::thin"
-        ],
-        "display_name": "Number of Thin Servers",
-        "description": "sets the number of thin servers to start up"
       },
       "rails/rake_tasks": {
         "required": "optional",
@@ -105,10 +86,8 @@
         "type": "string",
         "recipes": [
           "rails::unicorn",
-          "rails::thin",
           "rails::rake",
-          "rails::deploy",
-          "rails::passenger-nginx"
+          "rails::deploy"
         ],
         "display_name": "Rails Environment",
         "description": "The environment you want to install with"
