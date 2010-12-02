@@ -6,7 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "rails::ruby", "installs various ruby dependencies"
 recipe "rails::sqlite", "installs sqlite3 and ruby gem"
-recipe "rails::nginx", "installs and configures nginx to pass traffic down to thin"
+recipe "rails::nginx", "installs and configures nginx to pass traffic down to unicorn"
 recipe "rails::deploy", "deploys code from git repo"
 recipe "rails::rake", "executes rake tasks"
 recipe "rails::mysql", "installs mysql gem"
