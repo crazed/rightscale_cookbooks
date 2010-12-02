@@ -8,7 +8,7 @@
       "rails::sqlite": "installs sqlite3 and ruby gem",
       "rails::mysql": "installs mysql gem",
       "rails::rake": "executes rake tasks",
-      "rails::nginx": "installs and configures nginx to pass traffic down to thin",
+      "rails::nginx": "installs and configures nginx to pass traffic down to unicorn",
       "rails::rollback": "rollback to previous code revision",
       "rails::ruby": "installs various ruby dependencies",
       "rails::deploy": "deploys code from git repo"
