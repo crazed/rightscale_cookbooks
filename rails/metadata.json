@@ -3,6 +3,10 @@
     },
     "maintainer_email": "afeid@datapipe.com",
     "description": "Installs/Configures rails",
+    "groupings": {
+    },
+    "recommendations": {
+    },
     "recipes": {
       "rails::unicorn": "installs and configures unicorn",
       "rails::sqlite": "installs sqlite3 and ruby gem",
@@ -12,10 +16,6 @@
       "rails::rollback": "rollback to previous code revision",
       "rails::ruby": "installs various ruby dependencies",
       "rails::deploy": "deploys code from git repo"
-    },
-    "groupings": {
-    },
-    "recommendations": {
     },
     "attributes": {
       "rails/workers": {
@@ -75,6 +75,20 @@
         ],
         "display_name": "Rake Tasks",
         "description": "Space separated rake tasks to execute"
+      },
+      "rails/branch": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "master",
+        "type": "string",
+        "recipes": [
+          "rails::deploy"
+        ],
+        "display_name": "Branch",
+        "description": "Git branch to use"
       },
       "rails/environment": {
         "required": "optional",

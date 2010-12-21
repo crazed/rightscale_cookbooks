@@ -41,3 +41,9 @@ attribute "rails/environment",
   :type => "string",
   :default => "production",
   :recipes => [ 'rails::unicorn', 'rails::rake', 'rails::deploy' ]
+attribute "rails/branch",
+  :display_name => "Branch",
+  :description => "Git branch to use",
+  :type => "string",
+  :default => "master",
+  :recipes => [ 'rails::deploy' ]
