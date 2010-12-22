@@ -12,6 +12,7 @@ recipe "rails::rake", "executes rake tasks"
 recipe "rails::mysql", "installs mysql gem"
 recipe "rails::rollback", "rollback to previous code revision"
 recipe "rails::unicorn", "installs and configures unicorn"
+recipe "rails::maintenance", "turns the system maintenance page on"
 attribute "rails/workers",
   :display_name => "Number Unicorn Workers",
   :description => "sets the number of workers to spawn for unicorn",
@@ -22,7 +23,7 @@ attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
   :default => "/srv/app",
-  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::deploy', 'rails::rake' ]
+  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::deploy', 'rails::rake', 'rails::maintenance' ]
 attribute "rails/repo",
   :display_name => "Application Git Repo",
   :description => "Git repo to pull from for your application",
@@ -47,3 +48,9 @@ attribute "rails/branch",
   :type => "string",
   :default => "master",
   :recipes => [ 'rails::deploy' ]
+attribute "rails/maintenance_page",
+  :display_name => "Maintenance Page",
+  :description => "The filename of your maintenance page, stored in public/system/",
+  :type => "string",
+  :default => "maintenance.html.not_active",
+  :recipes => [ 'rails::maintenance' ]

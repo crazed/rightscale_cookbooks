@@ -8,6 +8,7 @@
     "recommendations": {
     },
     "recipes": {
+      "rails::maintenance": "turns the system maintenance page on",
       "rails::unicorn": "installs and configures unicorn",
       "rails::sqlite": "installs sqlite3 and ruby gem",
       "rails::mysql": "installs mysql gem",
@@ -44,7 +45,8 @@
           "rails::unicorn",
           "rails::nginx",
           "rails::deploy",
-          "rails::rake"
+          "rails::rake",
+          "rails::maintenance"
         ],
         "display_name": "Application Path",
         "description": "specifies the path to your application"
@@ -105,6 +107,20 @@
         ],
         "display_name": "Rails Environment",
         "description": "The environment you want to install with"
+      },
+      "rails/maintenance_page": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "maintenance.html.not_active",
+        "type": "string",
+        "recipes": [
+          "rails::maintenance"
+        ],
+        "display_name": "Maintenance Page",
+        "description": "The filename of your maintenance page, stored in public/system/"
       }
     },
     "suggestions": {
