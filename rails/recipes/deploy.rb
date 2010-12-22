@@ -15,7 +15,7 @@ deploy node.rails.app_path do
   migration_command "rake gems:install db:migrate"
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => node.rails.environment
-  #branch node.rails.branch
+  branch node.rails.branch
   if File.exists? "/var/run/unicorn/unicorn.pid"
     restart_command "kill -USR2 `cat /var/run/unicorn/unicorn.pid`"
   else
