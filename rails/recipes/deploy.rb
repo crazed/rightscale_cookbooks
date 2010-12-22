@@ -13,7 +13,7 @@ deploy node.rails.app_path do
   migrate true
   @symlink_before_migrate = {}
   purge_before_symlink %w{log tmp/pids}
-  symlinks {"pids" => "tmp/pids", "log" => "log"}
+  symlinks "pids" => "tmp/pids", "log" => "log"
   migration_command "rake gems:install db:migrate"
   shallow_clone true
   environment "HOME" => "/tmp", "RAILS_ENV" => node.rails.environment
