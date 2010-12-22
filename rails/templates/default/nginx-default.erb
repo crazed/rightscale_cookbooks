@@ -38,7 +38,7 @@ server {
   location @503 {
     # if this is a real 503 error, return that
     if (!-f $maintenance_path) {
-    error_page 503 /503.html;
+      error_page 503 /500.html;
     }
 
     # catch invalid methods, usually caused by posts to a static page
