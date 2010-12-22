@@ -4,7 +4,7 @@ server {
 
   root   <%= @app_path %>/current/public;
   recursive_error_pages on;
-  set $maintenance_page /system/maintenance.html
+  set $maintenance_page /system/maintenance.html;
   set $maintenance_path $document_root/$maintenance_page;
 
   location / {
