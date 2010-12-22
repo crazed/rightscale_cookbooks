@@ -49,7 +49,7 @@ server {
     if (-f $request_filename) {
       break;
     }
-    rewrite ^(.*)$ $maintenance_page $break;
+    rewrite ^(.*)$ $maintenance_page break;
   }
 
 }
