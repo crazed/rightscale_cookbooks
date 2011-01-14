@@ -6,10 +6,10 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-package apache2
-package git
-package git-daemon-run
-package gitweb
+package 'apache2'
+package 'git'
+package 'git-daemon-run'
+package 'gitweb'
 
 directory node.git.export_path do
   owner 'gitdaemon'
