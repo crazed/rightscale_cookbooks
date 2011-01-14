@@ -8,6 +8,7 @@
     "recommendations": {
     },
     "recipes": {
+      "git-daemon::default": "installs and configures git-daemon and gitweb"
     },
     "attributes": {
       "git/export_path": {
