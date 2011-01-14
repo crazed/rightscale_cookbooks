@@ -7,6 +7,6 @@ version          "0.0.1"
 attribute 'git/export_path',
   :display_name => "Git Export Path",
   :description => "Path that will be exported by git-daemon",
-  :type => "string"
-  :default => "/srv/git"
+  :type => "string",
+  :default => "/srv/git",
   :recipes => [ 'git-daemon::default' ]

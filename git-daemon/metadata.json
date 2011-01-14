@@ -1,0 +1,43 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "description": "Installs/Configures git-daemon and gitweb",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+    },
+    "attributes": {
+      "git/export_path": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/srv/git",
+        "type": "string",
+        "recipes": [
+          "git-daemon::default"
+        ],
+        "display_name": "Git Export Path",
+        "description": "Path that will be exported by git-daemon"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "git-daemon",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
