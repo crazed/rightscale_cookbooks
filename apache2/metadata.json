@@ -1,0 +1,104 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "YOUR_EMAIL",
+    "description": "Installs/Configures apache2",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "apache2::php": "installs/configures PHP",
+      "apache2::default": "installs/configures apache2"
+    },
+    "attributes": {
+      "apache2/keep_alives": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+          "On",
+          "Off"
+        ],
+        "default": "Off",
+        "type": "string",
+        "recipes": [
+          "apache2::default"
+        ],
+        "display_name": "Keep Alives",
+        "description": "Turn on or off KeepAlive in Apache"
+      },
+      "apache2/x-forwarded-for_logs": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+          "true",
+          "false"
+        ],
+        "default": "true",
+        "type": "string",
+        "recipes": [
+          "apache2::default "
+        ],
+        "display_name": "Use X-Forwarded-For in Logs",
+        "description": "Set the LogFormat to use X-Forwarded-For (useful for ELB)"
+      },
+      "apache2/mod_rewrite": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+          "true",
+          "false"
+        ],
+        "default": "true",
+        "type": "string",
+        "recipes": [
+          "apache2::default"
+        ],
+        "display_name": "mod_rewrite enabled",
+        "description": "Whether or not to enable mod_rewrite"
+      },
+      "apachec2/max_clients": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "150",
+        "type": "string",
+        "recipes": [
+          "apache2::default"
+        ],
+        "display_name": "Max Client Connections",
+        "description": "Set the MaxClient directive in Apache2"
+      },
+      "apache2/document_root": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/srv/http",
+        "type": "string",
+        "recipes": [
+          "apache2::default"
+        ],
+        "display_name": "Document Root",
+        "description": "Directory with your web content"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "apache2",
+    "providing": {
+    },
+    "maintainer": "YOUR_COMPANY_NAME"
+  }
