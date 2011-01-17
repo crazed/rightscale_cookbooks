@@ -19,7 +19,7 @@ attribute 'apache2/keep_alives',
   :choice => [ 'On', 'Off' ],
   :default => 'Off',
   :recipes => [ 'apache2::default' ]
-attribute 'apachec2/max_clients',
+attribute 'apache2/max_clients',
   :display_name => 'Max Client Connections',
   :description => 'Set the MaxClient directive in Apache2',
   :type => 'string',
