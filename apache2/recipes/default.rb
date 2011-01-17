@@ -10,7 +10,7 @@
 package "apache2"
 
 log_rules = Array.new
-case node.apache2.x-forwarded-for_logs
+case node.apache2.xforwardedfor_logs
 when 'true'
   log_rules << '"%v:%p %{X-Forwarded-For}i %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined'
   log_rules << '"%{X-Forwarded-For}i %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined'

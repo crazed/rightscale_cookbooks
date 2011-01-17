@@ -27,21 +27,6 @@
         "display_name": "Keep Alives",
         "description": "Turn on or off KeepAlive in Apache"
       },
-      "apache2/x-forwarded-for_logs": {
-        "required": "optional",
-        "calculated": false,
-        "choice": [
-          "true",
-          "false"
-        ],
-        "default": "true",
-        "type": "string",
-        "recipes": [
-          "apache2::default "
-        ],
-        "display_name": "Use X-Forwarded-For in Logs",
-        "description": "Set the LogFormat to use X-Forwarded-For (useful for ELB)"
-      },
       "apache2/mod_rewrite": {
         "required": "optional",
         "calculated": false,
@@ -84,6 +69,21 @@
         ],
         "display_name": "Document Root",
         "description": "Directory with your web content"
+      },
+      "apache2/xforwardedfor_logs": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+          "true",
+          "false"
+        ],
+        "default": "true",
+        "type": "string",
+        "recipes": [
+          "apache2::default "
+        ],
+        "display_name": "Use X-Forwarded-For in Logs",
+        "description": "Set the LogFormat to use X-Forwarded-For (useful for ELB)"
       }
     },
     "suggestions": {
