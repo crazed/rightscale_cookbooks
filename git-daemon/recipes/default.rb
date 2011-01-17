@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 package 'apache2'
-package 'git'
+package 'git-core'
 package 'git-daemon-run'
 package 'gitweb'
 
