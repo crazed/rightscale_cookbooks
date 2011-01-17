@@ -80,7 +80,7 @@
         "default": "true",
         "type": "string",
         "recipes": [
-          "apache2::default "
+          "apache2::default"
         ],
         "display_name": "Use X-Forwarded-For in Logs",
         "description": "Set the LogFormat to use X-Forwarded-For (useful for ELB)"

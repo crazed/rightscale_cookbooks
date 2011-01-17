@@ -37,4 +37,4 @@ attribute 'apache2/xforwardedfor_logs',
   :description => "Set the LogFormat to use X-Forwarded-For (useful for ELB)",
   :choice => [ 'true', 'false'],
   :default => 'true',
-  :recipes => [ 'apache2::default ']
+  :recipes => [ 'apache2::default']
