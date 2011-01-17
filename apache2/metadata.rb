@@ -29,12 +29,12 @@ attribute 'apache2/mod_rewrite',
   :display_name => 'mod_rewrite enabled',
   :description => 'Whether or not to enable mod_rewrite',
   :type => 'string',
-  :choice => [ true, false ],
-  :default => true,
+  :choice => [ 'true', 'false' ],
+  :default => 'true',
   :recipes => [ 'apache2::default' ]
 attribute 'apache2/x-forwarded-for_logs',
   :display_name => 'Use X-Forwarded-For in Logs',
   :description => "Set the LogFormat to use X-Forwarded-For (useful for ELB)"
-  :choice => [ true, false],
-  :default => true,
+  :choice => [ 'true', 'false'],
+  :default => 'true',
   :recipes => [ 'apache2::default ']

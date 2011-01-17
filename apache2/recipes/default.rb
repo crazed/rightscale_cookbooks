@@ -11,7 +11,7 @@ package "apache2"
 
 log_rules = Array.new
 case node.apache2.x-forwarded-for_logs
-when true
+when 'true'
   log_rules << '"%v:%p %{X-Forwarded-For}i %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined'
   log_rules << '"%{X-Forwarded-For}i %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined'
   log_rules << '"%{X-Forwarded-For}i %l %u %t \"%r\" %>s %O" common'
@@ -49,7 +49,7 @@ when 'ubuntu'
     command "a2enmod rewrite"
     action :nothing
   end
-  if node.apache2.mod_rewrite == true
+  if node.apache2.mod_rewrite == 'true'
     execute "enable mod_rewrite" do
       creates "/etc/apache2/mods-enabled/rewrite"
       command "a2enmod rewrite"
