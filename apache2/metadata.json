@@ -42,7 +42,7 @@
         "display_name": "mod_rewrite enabled",
         "description": "Whether or not to enable mod_rewrite"
       },
-      "apachec2/max_clients": {
+      "apache2/max_clients": {
         "required": "optional",
         "calculated": false,
         "choice": [
