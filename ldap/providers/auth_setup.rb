@@ -32,6 +32,8 @@ action :install do
       )
     end
     template '/etc/auth-client-config/profile.d/ldap-auth-config' do
+      # auth-client-config loads via glob in profile.d/, turn off backups to prevent issues
+      backup false
       owner 'root'
       group 'root'
       mode '644'
