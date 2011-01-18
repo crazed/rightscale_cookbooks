@@ -1,0 +1,32 @@
+maintainer       "Datapipe"
+maintainer_email "afeid@datapipe.com"
+license          "All rights reserved"
+description      "Installs/Configures ldap"
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
+version          "0.0.1"
+recipe "ldap::auth", "configures a client for LDAP authentication"
+attribute 'ldap/binddn',
+  :display_name => 'LDAP Bind DN',
+  :description => 'The DN to bind as for lookups in LDAP',
+  :type => 'string',
+  :recipes => [ 'ldap::auth' ]
+attribute 'ldap/bindpw',
+  :display_name => 'LDAP Bind Password',
+  :description => 'The password for the bind DN',
+  :type => 'string',
+  :recipes => [ 'ldap::auth' ]
+attribute 'ldap/basedn',
+  :display_name => 'LDAP Base DN',
+  :description => 'The base DN for LDAP lookups',
+  :type => 'string',
+  :recipes => [ 'ldap::auth' ]
+attribute 'ldap/uri',
+  :display_name => 'LDAP Server URIs',
+  :description => 'Space delimited list of ldap servers with their URI, ex: ldap://ldap1.example.com',
+  :type => 'string',
+  :recipes => [ 'ldap::auth' ]
+attribute 'ldap/cacert_url',
+  :display_name => 'LDAP CA Cert URL',
+  :description => 'The URL which has the CA Certificate for LDAP servers',
+  :type => 'string',
+  :recipes => [ 'ldap::auth' ]

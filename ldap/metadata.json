@@ -1,0 +1,95 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "afeid@datapipe.com",
+    "description": "Installs/Configures ldap",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "ldap::auth": "configures a client for LDAP authentication"
+    },
+    "attributes": {
+      "ldap/bindpw": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "ldap::auth"
+        ],
+        "display_name": "LDAP Bind Password",
+        "description": "The password for the bind DN"
+      },
+      "ldap/cacert_url": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "ldap::auth"
+        ],
+        "display_name": "LDAP CA Cert URL",
+        "description": "The URL which has the CA Certificate for LDAP servers"
+      },
+      "ldap/basedn": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "ldap::auth"
+        ],
+        "display_name": "LDAP Base DN",
+        "description": "The base DN for LDAP lookups"
+      },
+      "ldap/uri": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "ldap::auth"
+        ],
+        "display_name": "LDAP Server URIs",
+        "description": "Space delimited list of ldap servers with their URI, ex: ldap://ldap1.example.com"
+      },
+      "ldap/binddn": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "ldap::auth"
+        ],
+        "display_name": "LDAP Bind DN",
+        "description": "The DN to bind as for lookups in LDAP"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "ldap",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
