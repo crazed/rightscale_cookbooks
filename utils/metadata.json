@@ -1,0 +1,43 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "cloud@datapipe.com",
+    "description": "Installs/Configures utils",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "utils::set_hostname": "Sets the instance hostname to something sane"
+    },
+    "attributes": {
+      "utils/hostname": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "utils::set_hostname"
+        ],
+        "display_name": "Instance Hostname",
+        "description": "Choose a sane hostname for this instance"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "utils",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
