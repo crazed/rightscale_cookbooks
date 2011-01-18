@@ -8,7 +8,8 @@
     "recommendations": {
     },
     "recipes": {
-      "ldap::auth": "configures a client for LDAP authentication"
+      "ldap::sudoers": "configures an instance to use LDAP for sudoers",
+      "ldap::auth": "configures an instance for LDAP authentication"
     },
     "attributes": {
       "ldap/bindpw": {
