@@ -1,2 +1,2 @@
 actions :enable
-attribute :hostname, :kind_of => String, :required => true, :name_attribute => true
+attribute :hostname, :kind_of => String, :name_attribute => true
