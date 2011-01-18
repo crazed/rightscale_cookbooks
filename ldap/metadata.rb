@@ -6,19 +6,19 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "ldap::auth", "configures an instance for LDAP authentication"
 recipe 'ldap::sudoers', 'configures an instance to use LDAP for sudoers'
-attribute 'ldap/binddn',
+attribute 'ldap/bind_dn',
   :display_name => 'LDAP Bind DN',
   :description => 'The DN to bind as for lookups in LDAP',
   :type => 'string',
   :recipes => [ 'ldap::auth' ],
   :required => 'required'
-attribute 'ldap/bindpw',
+attribute 'ldap/bind_pw',
   :display_name => 'LDAP Bind Password',
   :description => 'The password for the bind DN',
   :type => 'string',
   :required => 'required',
   :recipes => [ 'ldap::auth' ]
-attribute 'ldap/basedn',
+attribute 'ldap/base_dn',
   :display_name => 'LDAP Base DN',
   :description => 'The base DN for LDAP lookups',
   :type => 'string',

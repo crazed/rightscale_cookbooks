@@ -12,7 +12,7 @@
       "ldap::auth": "configures an instance for LDAP authentication"
     },
     "attributes": {
-      "ldap/bindpw": {
+      "ldap/bind_pw": {
         "required": "required",
         "calculated": false,
         "choice": [
@@ -38,19 +38,6 @@
         "display_name": "LDAP CA Cert URL",
         "description": "The URL which has the CA Certificate for LDAP servers"
       },
-      "ldap/basedn": {
-        "required": "required",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "type": "string",
-        "recipes": [
-          "ldap::auth"
-        ],
-        "display_name": "LDAP Base DN",
-        "description": "The base DN for LDAP lookups"
-      },
       "ldap/uri": {
         "required": "required",
         "calculated": false,
@@ -64,7 +51,7 @@
         "display_name": "LDAP Server URIs",
         "description": "Space delimited list of ldap servers with their URI, ex: ldap://ldap1.example.com"
       },
-      "ldap/binddn": {
+      "ldap/bind_dn": {
         "required": "required",
         "calculated": false,
         "choice": [
@@ -76,6 +63,19 @@
         ],
         "display_name": "LDAP Bind DN",
         "description": "The DN to bind as for lookups in LDAP"
+      },
+      "ldap/base_dn": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "ldap::auth"
+        ],
+        "display_name": "LDAP Base DN",
+        "description": "The base DN for LDAP lookups"
       }
     },
     "suggestions": {
