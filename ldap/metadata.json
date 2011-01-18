@@ -13,7 +13,7 @@
     },
     "attributes": {
       "ldap/bindpw": {
-        "required": "optional",
+        "required": "required",
         "calculated": false,
         "choice": [
 
@@ -26,7 +26,7 @@
         "description": "The password for the bind DN"
       },
       "ldap/cacert_url": {
-        "required": "optional",
+        "required": "required",
         "calculated": false,
         "choice": [
 
@@ -39,7 +39,7 @@
         "description": "The URL which has the CA Certificate for LDAP servers"
       },
       "ldap/basedn": {
-        "required": "optional",
+        "required": "required",
         "calculated": false,
         "choice": [
 
@@ -52,7 +52,7 @@
         "description": "The base DN for LDAP lookups"
       },
       "ldap/uri": {
-        "required": "optional",
+        "required": "required",
         "calculated": false,
         "choice": [
 
@@ -65,7 +65,7 @@
         "description": "Space delimited list of ldap servers with their URI, ex: ldap://ldap1.example.com"
       },
       "ldap/binddn": {
-        "required": "optional",
+        "required": "required",
         "calculated": false,
         "choice": [
 

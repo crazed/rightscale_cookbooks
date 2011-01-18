@@ -10,24 +10,29 @@ attribute 'ldap/binddn',
   :display_name => 'LDAP Bind DN',
   :description => 'The DN to bind as for lookups in LDAP',
   :type => 'string',
-  :recipes => [ 'ldap::auth' ]
+  :recipes => [ 'ldap::auth' ],
+  :required => 'required'
 attribute 'ldap/bindpw',
   :display_name => 'LDAP Bind Password',
   :description => 'The password for the bind DN',
   :type => 'string',
+  :required => 'required',
   :recipes => [ 'ldap::auth' ]
 attribute 'ldap/basedn',
   :display_name => 'LDAP Base DN',
   :description => 'The base DN for LDAP lookups',
   :type => 'string',
+  :required => 'required',
   :recipes => [ 'ldap::auth' ]
 attribute 'ldap/uri',
   :display_name => 'LDAP Server URIs',
   :description => 'Space delimited list of ldap servers with their URI, ex: ldap://ldap1.example.com',
   :type => 'string',
+  :required => 'required',
   :recipes => [ 'ldap::auth' ]
 attribute 'ldap/cacert_url',
   :display_name => 'LDAP CA Cert URL',
   :description => 'The URL which has the CA Certificate for LDAP servers',
   :type => 'string',
+  :required => 'required',
   :recipes => [ 'ldap::auth' ]
