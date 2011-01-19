@@ -1,7 +1,7 @@
 action :enable do
   execute 'hostname' do
     command "hostname #{new_resource.hostname}"
-    action :nothing
+    action :run
   end
   case node.platform
   when 'ubuntu'
@@ -12,10 +12,14 @@ action :enable do
       mode '644'
       source 'hostname.erb'
       variables(:hostname => new_resource.hostname)
-      notifies :run, resources(:execute => 'hostname')
+    end
+
+    # this makes sure logs are,
+    # now using the new hostname
+    service 'rsyslog' do
+      action :restart
     end
   else
-    Chef::Log.fatal("Your platform is not supported: #{node.platform}")
-    raise
+    Chef::Log.info("Your platform is not fully supported: #{node.platform}")
   end
 end
