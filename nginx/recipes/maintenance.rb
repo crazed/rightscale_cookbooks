@@ -11,12 +11,9 @@ case File.exists?("#{node.nginx.document_root}/maintenance.html")
 when true
   execute "rm -f #{node.nginx.document_root}/maintenance.html"
 else
-  template "#{node.nginx.document_root}/maintenance.html" do
-    backup false
-    owner www_user
-    group www_group
-    mode '644'
-    source 'maintenance.html.erb'
-    variables(:html => node.nginx.maintenance_html)
+  ruby_block 'create maintenance page' do
+    block do
+      File.open("#{node.nginx.document_root}/maintenance.html", 'w') { |f| f.write(node.nginx.maintenance_html) }
+    end
   end
 end
