@@ -12,7 +12,7 @@
     },
     "attributes": {
       "utils/hostname": {
-        "required": "required",
+        "required": "optional",
         "calculated": false,
         "choice": [
 

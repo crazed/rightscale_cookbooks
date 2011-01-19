@@ -9,5 +9,4 @@ attribute 'utils/hostname',
   :display_name => 'Instance Hostname',
   :description => 'Choose a sane hostname for this instance',
   :type => 'string',
-  :required => 'required',
   :recipes => [ 'utils::set_hostname' ]
