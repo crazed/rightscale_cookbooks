@@ -46,3 +46,9 @@ attribute 'nginx/proxy',
   :description => 'The server nginx should proxy to',
   :default => 'localhost:81',
   :recipes => [ 'nginx::proxy' ]
+attribute 'nginx/maintenance_html',
+  :display_name => 'Nginx Maintenance HTML',
+  :description => 'HTML content to display when maintenance is active',
+  :type => 'string',
+  :default => '<h1>Currently Unavailable</h1><p>Site is under maintenance, please try again later.</p>',
+  :recipes => [ 'nginx::maintenance' ]
