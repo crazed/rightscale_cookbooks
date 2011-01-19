@@ -8,6 +8,7 @@
     "recommendations": {
     },
     "recipes": {
+      "nginx::proxy": "Installs and configures Nginx for use with a proxy",
       "nginx::ssl_termination": "Installs and configures Nginx for SSL termination with HAproxy",
       "nginx::default": "Installs and configured nginx"
     },
