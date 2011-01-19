@@ -4,7 +4,7 @@ upstream proxy {
 
 server {
   listen        80 default;
-  server_name   <%= @server_name %>;
+  server_name   localhost;
   root          <%= @document_root %>;
   try_files /maintenance.html @proxy;
   location @proxy {
