@@ -22,7 +22,7 @@ template '/etc/nginx/sites-available/default' do
   mode '644'
   source 'nginx-proxy.erb'
   variables(
-    :proxy => node.nginx.load_balancer,
+    :proxy => node.nginx.proxy,
     :document_root => node.nginx.document_root
   )
   notifies :restart, resources(:service => 'nginx'), :immediately
