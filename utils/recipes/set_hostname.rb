@@ -6,7 +6,6 @@ if node.utils.hostname
   # find the ipv4 address of the server
   ipv4 = nil
   node.network.interfaces[node.network.default_interface].addresses.each do |address|
-    Chef::Log.info(p address)
     Chef::Log.info("Address: #{address[0]}")
     if address.family == 'inet'
       ipv4 = address
