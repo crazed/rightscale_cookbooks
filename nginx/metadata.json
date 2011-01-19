@@ -25,6 +25,20 @@
         "display_name": "SSL Certificate",
         "description": "PEM based SSL certificate data"
       },
+      "nginx/proxy": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "localhost:81",
+        "type": "string",
+        "recipes": [
+          "nginx::proxy"
+        ],
+        "display_name": "Nginx Proxy Location",
+        "description": "The server nginx should proxy to"
+      },
       "nginx/ssl_key": {
         "required": "required",
         "calculated": false,
@@ -37,6 +51,21 @@
         ],
         "display_name": "SSL Key",
         "description": "PEM based SSL private key data"
+      },
+      "nginx/document_root": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/srv/http",
+        "type": "string",
+        "recipes": [
+          "nginx::proxy",
+          "nginx::ssl_termination"
+        ],
+        "display_name": "Nginx Document Root",
+        "description": "The documentroot for nginx"
       },
       "nginx/load_balancer": {
         "required": "optional",

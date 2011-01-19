@@ -35,3 +35,13 @@ attribute 'nginx/load_balancer',
   :type => 'string',
   :default => 'localhost:85',
   :recipes => [ 'nginx::ssl_termination' ]
+attribute 'nginx/document_root',
+  :display_name => 'Nginx Document Root',
+  :description => 'The documentroot for nginx',
+  :default => '/srv/http',
+  :recipes => [ 'nginx::proxy', 'nginx::ssl_termination' ]
+attribute 'nginx/proxy',
+  :display_name => 'Nginx Proxy Location',
+  :description => 'The server nginx should proxy to',
+  :default => 'localhost:81',
+  :recipes => [ 'nginx::proxy' ]
