@@ -51,3 +51,11 @@ service "nginx" do
   supports :status => true, :restart => true
   action [ :enable, :start ]
 end
+
+# fix some log rotation
+remote_file '/etc/logrotate.d/nginx' do
+  source 'nginx-logrotate'
+  owner 'root'
+  group 'root'
+  mode '644'
+end
