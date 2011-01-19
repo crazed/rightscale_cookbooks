@@ -1,14 +1,57 @@
 {
-    "suggestions": {
+    "replacing": {
     },
+    "maintainer_email": "afeid@datapipe.com",
     "description": "Installs/Configures nginx-web-stack",
-    "conflicting": {
+    "groupings": {
+    },
+    "recommendations": {
     },
     "recipes": {
+      "nginx::ssl_termination": "Installs and configures Nginx for SSL termination with HAproxy",
       "nginx::default": "Installs and configured nginx"
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
     "attributes": {
+      "nginx/ssl_cert": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "nginx::ssl_termination"
+        ],
+        "display_name": "SSL Certificate",
+        "description": "PEM based SSL certificate data"
+      },
+      "nginx/ssl_key": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "nginx::ssl_termination"
+        ],
+        "display_name": "SSL Key",
+        "description": "PEM based SSL private key data"
+      },
+      "nginx/load_balancer": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "localhost:85",
+        "type": "string",
+        "recipes": [
+          "nginx::ssl_termination"
+        ],
+        "display_name": "Load Balancer URI",
+        "description": "The load balancer URI, ex: localhost:85"
+      },
       "domain_name": {
         "required": "required",
         "calculated": false,
@@ -21,23 +64,33 @@
         ],
         "display_name": "Domain",
         "description": "The FQDN of your website"
+      },
+      "code_path": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "nginx::default"
+        ],
+        "display_name": "Document Root"
       }
     },
-    "providing": {
+    "suggestions": {
     },
     "dependencies": {
     },
-    "maintainer": "Datapipe",
-    "replacing": {
+    "conflicting": {
     },
     "platforms": {
     },
-    "maintainer_email": "afeid@datapipe.com",
     "version": "0.0.1",
-    "groupings": {
-    },
     "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
     "name": "nginx",
-    "recommendations": {
-    }
+    "providing": {
+    },
+    "maintainer": "Datapipe"
   }

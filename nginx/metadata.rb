@@ -5,6 +5,7 @@ description      "Installs/Configures nginx-web-stack"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "nginx::default", "Installs and configured nginx"
+recipe "nginx::ssl_termination", "Installs and configures Nginx for SSL termination with HAproxy"
 attribute 'domain_name',
   :display_name => "Domain",
   :description => "The FQDN of your website",
@@ -16,3 +17,21 @@ attribute 'code_path',
   :type => "string",
   :required => "required",
   :recipes => [ "nginx::default" ]
+attribute 'nginx/ssl_cert',
+  :display_name => 'SSL Certificate',
+  :description => 'PEM based SSL certificate data',
+  :type => 'string',
+  :required => 'required',
+  :recipes => [ 'nginx::ssl_termination' ]
+attribute 'nginx/ssl_key',
+  :display_name => 'SSL Key',
+  :description => 'PEM based SSL private key data',
+  :type => 'string',
+  :required => 'required',
+  :recipes => [ 'nginx::ssl_termination' ]
+attribute 'nginx/load_balancer',
+  :display_name => 'Load Balancer URI',
+  :description => 'The load balancer URI, ex: localhost:85',
+  :type => 'string',
+  :default => 'localhost:85',
+  :recipes => [ 'nginx::ssl_termination' ]
