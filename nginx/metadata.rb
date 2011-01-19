@@ -7,6 +7,7 @@ version          "0.0.1"
 recipe "nginx::default", "Installs and configured nginx"
 recipe "nginx::ssl_termination", "Installs and configures Nginx for SSL termination with HAproxy"
 recipe "nginx::proxy", "Installs and configures Nginx for use with a proxy"
+recipe "nginx::maintenance", "A basic script for enabling a maintenance page"
 attribute 'domain_name',
   :display_name => "Domain",
   :description => "The FQDN of your website",

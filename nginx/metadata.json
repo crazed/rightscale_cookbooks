@@ -10,6 +10,7 @@
     "recipes": {
       "nginx::proxy": "Installs and configures Nginx for use with a proxy",
       "nginx::ssl_termination": "Installs and configures Nginx for SSL termination with HAproxy",
+      "nginx::maintenance": "A basic script for enabling a maintenance page",
       "nginx::default": "Installs and configured nginx"
     },
     "attributes": {
