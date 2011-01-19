@@ -8,6 +8,7 @@
     "recommendations": {
     },
     "recipes": {
+      "apache2::restart": "restarts apache2",
       "apache2::php": "installs/configures PHP",
       "apache2::default": "installs/configures apache2"
     },
@@ -27,6 +28,20 @@
         "display_name": "Keep Alives",
         "description": "Turn on or off KeepAlive in Apache"
       },
+      "apache2/max_clients": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "150",
+        "type": "string",
+        "recipes": [
+          "apache2::default"
+        ],
+        "display_name": "Max Client Connections",
+        "description": "Set the MaxClient directive in Apache2"
+      },
       "apache2/mod_rewrite": {
         "required": "optional",
         "calculated": false,
@@ -41,20 +56,6 @@
         ],
         "display_name": "mod_rewrite enabled",
         "description": "Whether or not to enable mod_rewrite"
-      },
-      "apache2/max_clients": {
-        "required": "optional",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "default": "150",
-        "type": "string",
-        "recipes": [
-          "apache2::default"
-        ],
-        "display_name": "Max Client Connections",
-        "description": "Set the MaxClient directive in Apache2"
       },
       "apache2/document_root": {
         "required": "optional",
