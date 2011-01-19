@@ -44,11 +44,6 @@ end
 
 case node.platform
 when 'ubuntu'
-  e = execute "enable mod_rewrite" do
-    creates "/etc/apache2/mods-enabled/rewrite"
-    command "a2enmod rewrite"
-    action :nothing
-  end
   if node.apache2.mod_rewrite == 'true'
     execute "enable mod_rewrite" do
       creates "/etc/apache2/mods-enabled/rewrite"
@@ -57,4 +52,16 @@ when 'ubuntu'
       notifies :restart, resources(:service => "apache2"), :immediately
     end
   end
+else
+  Chef::Log.fatal("Your platform is not supported: #{node.platform}")
+  raise
+end
+
+# setup some logrotation
+remote_file '/etc/logrotate.d/apache2' do
+  backup false
+  source 'logrotate'
+  mode '644'
+  owner 'root'
+  group 'root'
 end
