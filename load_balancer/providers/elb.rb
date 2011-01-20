@@ -6,6 +6,10 @@ def load_fog_gem
   end
 end
 
+def elb
+  @@elb ||= Fog::AWS::ELB.new(:aws_access_key_id => new_resource.access_key, :aws_secret_access_key => new_resource.secret_key)
+end
+
 action :register do
   load_fog_gem
   elb_data = elb.describe_load_balancers(new_resource.elb_name).body
