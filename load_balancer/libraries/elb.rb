@@ -1,5 +1,6 @@
 begin
   require 'fog'
+  Excon.ssl_ca_path = '/etc/ssl/certs'
 rescue LoadError
   Chef::Log.warn("Missing gem 'fog'")
 end
