@@ -1,6 +1,13 @@
-include Opscode::Aws::Elb
+def load_fog_gem
+  begin
+    require 'fog'
+  rescue LoadError
+    Chef::Log.fatal("You are missing the 'fog' gem, be sure to run load_balancer::default first.")
+  end
+end
 
 action :register do
+  load_fog_gem
   elb_data = elb.describe_load_balancers(new_resource.elb_name).body
   elb_zones = elb_data['DescribeLoadBalancersResult']['LoadBalancerDescriptions'][0]['AvailabilityZones']
   case elb_zones.include?(node.ec2.placement_availability_zone)
@@ -14,5 +21,6 @@ action :register do
 end
 
 action :deregister do
+  load_fog_gem
   elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
 end
