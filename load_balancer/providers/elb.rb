@@ -14,5 +14,5 @@ action :register do
 end
 
 action :deregister do
-  elb.deregisters(node.ec2.instance_id, new_resource.elb_name)
+  elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
 end
