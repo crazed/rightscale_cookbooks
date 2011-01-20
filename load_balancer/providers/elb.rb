@@ -18,7 +18,7 @@ action :register do
   case elb_zones.include?(node.ec2.placement_availability_zone)
   when true
     elb.register_instances(node.ec2.instance_id, new_resource.elb_name)
-    Chef::Log.info("#{node.ec2.instance_id} has been registered to '#{new_resource.elb_name}'")
+    Chef::Log.info("ELB: #{node.ec2.instance_id} has been registered to '#{new_resource.elb_name}'")
   else
     Chef::Log.fatal("Your node is not in one of the supported availability zones for '#{new_resource.elb_name}': #{elb_zones}")
     raise
@@ -28,4 +28,5 @@ end
 action :deregister do
   load_fog_gem
   elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
+  Chef::Log.info("ELB: #{node.ec2.instance_id} has been deregistered from '#{new_resource.elb_name}'")
 end
