@@ -8,7 +8,7 @@ module Opscode
   module Aws
     module Elb
       def elb
-        @@elb ||= Fog::AWS::ELB.new(:aws_access_key_id => new_resource.access_key_id, :aws_secret_access_key => new_resource.secret_access_key)
+        @@elb ||= Fog::AWS::ELB.new(:aws_access_key_id => new_resource.access_key, :aws_secret_access_key => new_resource.secret_key)
       end
     end
   end
