@@ -1,6 +1,7 @@
 def load_fog_gem
   begin
     require 'fog'
+    Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
   rescue LoadError
     Chef::Log.fatal("You are missing the 'fog' gem, be sure to run load_balancer::default first.")
   end
