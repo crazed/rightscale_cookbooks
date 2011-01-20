@@ -1,4 +1,3 @@
-require 'fog'
 action :register do
   elb = FOG::AWS::ELB.new(:aws_access_key_id => new_resource.access_key_id, :aws_secret_access_key => new_resource.secret_access_key)
   elb_data = elb.describe_load_balancers(new_resource.elb_name).body
