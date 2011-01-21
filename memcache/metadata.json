@@ -1,30 +1,72 @@
 {
-    "providing": {
-    },
-    "license": "All rights reserved",
-    "maintainer": "YOUR_COMPANY_NAME",
     "replacing": {
     },
-    "maintainer_email": "YOUR_EMAIL",
+    "maintainer_email": "cloud@datapipe.com",
+    "description": "Installs/Configures memcache",
     "groupings": {
     },
-    "description": "Installs/Configures memcache",
     "recommendations": {
     },
-    "platforms": {
+    "recipes": {
+      "memcache::default": "installs and configured memcached"
     },
     "attributes": {
+      "memcache/bind_address": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "127.0.0.1",
+        "type": "string",
+        "recipes": [
+          "memcache::default"
+        ],
+        "display_name": "Memcache Bind Address",
+        "description": "The address to listen on for memcached."
+      },
+      "memcache/port": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "11211",
+        "type": "string",
+        "recipes": [
+          "memcache::defualt"
+        ],
+        "display_name": "Memcache Port",
+        "description": "Port for memcache to bind to"
+      },
+      "memcache/memory_size": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "64",
+        "type": "string",
+        "recipes": [
+          "memcache::default"
+        ],
+        "display_name": "Memcache Max Memory",
+        "description": "Maximum memory allocation for memcache in megabytes"
+      }
     },
     "suggestions": {
     },
     "dependencies": {
     },
-    "version": "0.0.1",
-    "recipes": {
-      "memcache::default": "installs and configured memcached"
-    },
-    "name": "memcache",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "memcache",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
   }
