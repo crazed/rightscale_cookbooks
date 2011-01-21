@@ -11,6 +11,7 @@ package "ruby"
 package "ruby-dev"
 package "libopenssl-ruby"
 package "build-essential"
+package 'rubygems'
 
 execute "gem update --system"
 
