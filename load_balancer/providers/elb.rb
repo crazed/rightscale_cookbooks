@@ -1,15 +1,12 @@
 HTTP_OK = 200
 
-def load_fog_gem
-  begin
-    require 'fog'
-    Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
-  rescue LoadError
-    Chef::Log.fatal("You are missing the 'fog' gem, be sure to run load_balancer::default first.")
-  end
-end
+#def load_fog_gem
+#  require 'fog'
+#  Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
+#end
 
 def elb
+  require 'fog'
   @@elb ||= Fog::AWS::ELB.new(:aws_access_key_id => new_resource.access_key, :aws_secret_access_key => new_resource.secret_key)
 end
 
