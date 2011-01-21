@@ -17,7 +17,8 @@ action :register do
   elb_zones = elb_data['DescribeLoadBalancersResult']['LoadBalancerDescriptions'][0]['AvailabilityZones']
   case elb_zones.include?(node.ec2.placement_availability_zone)
   when true
-    elb.register_instances(node.ec2.instance_id, new_resource.elb_name)
+    response = elb.register_instances(node.ec2.instance_id, new_resource.elb_name)
+    Chef::Log.info("ELB: #{p response}")
     Chef::Log.info("ELB: #{node.ec2.instance_id} has been registered to '#{new_resource.elb_name}'")
   else
     Chef::Log.fatal("Your node is not in one of the supported availability zones for '#{new_resource.elb_name}': #{elb_zones}")
