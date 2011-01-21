@@ -11,7 +11,6 @@ def elb
 end
 
 action :register do
-  load_fog_gem
   elb_data = elb.describe_load_balancers(new_resource.elb_name).body
   elb_zones = elb_data['DescribeLoadBalancersResult']['LoadBalancerDescriptions'][0]['AvailabilityZones']
 
@@ -32,7 +31,6 @@ action :register do
 end
 
 action :deregister do
-  load_fog_gem
   response = elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
 
   case response.status
