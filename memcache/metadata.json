@@ -34,7 +34,7 @@
         "default": "11211",
         "type": "string",
         "recipes": [
-          "memcache::defualt"
+          "memcache::default"
         ],
         "display_name": "Memcache Port",
         "description": "Port for memcache to bind to"

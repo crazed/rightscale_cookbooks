@@ -21,4 +21,4 @@ attribute 'memcache/port',
   :display_name => 'Memcache Port',
   :description => 'Port for memcache to bind to',
   :default => '11211',
-  :recipes => [ 'memcache::defualt' ]
+  :recipes => [ 'memcache::default' ]
