@@ -1,16 +1,16 @@
 HTTP_OK = 200
 
-#def load_fog_gem
-#  require 'fog'
-#  Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
-#end
+def load_fog_gem
+  require 'fog'
+  Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
+end
 
 def elb
-  require 'fog'
   @@elb ||= Fog::AWS::ELB.new(:aws_access_key_id => new_resource.access_key, :aws_secret_access_key => new_resource.secret_key)
 end
 
 action :register do
+  load_fog_gem
   elb_data = elb.describe_load_balancers(new_resource.elb_name).body
   elb_zones = elb_data['DescribeLoadBalancersResult']['LoadBalancerDescriptions'][0]['AvailabilityZones']
 
@@ -31,6 +31,7 @@ action :register do
 end
 
 action :deregister do
+  load_fog_gem
   response = elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
 
   case response.status
