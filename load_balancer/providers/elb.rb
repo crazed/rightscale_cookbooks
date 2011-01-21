@@ -4,7 +4,7 @@ def load_fog_gem
   begin
     require 'fog'
     Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
-  rescue
+  rescue LoadError
     Chef::Log.warn("Mising the 'fog' gem")
   end
 end
