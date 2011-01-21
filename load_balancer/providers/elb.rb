@@ -1,8 +1,12 @@
 HTTP_OK = 200
 
 def load_fog_gem
-  require 'fog'
-  Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
+  begin
+    require 'fog'
+    Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
+  rescue
+    Chef::Log.warn("Mising the 'fog' gem")
+  end
 end
 
 def elb
