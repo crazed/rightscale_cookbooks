@@ -7,11 +7,18 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package "ruby"
-package "ruby-dev"
-package "libopenssl-ruby"
-package "build-essential"
-package 'rubygems'
+case node.platform
+when 'ubuntu'
+  package 'ruby'
+  package 'ruby-dev'
+  package 'libopenssl-ruby'
+  package 'build-essential'
+  package 'rubygems'
+  package 'rake'
+else 
+  Chef::Log.fatal("Your platform is not supported: #{node.platform}")
+  raise
+end
 
 # the rightscale gem sources seem to miss some updates
 # and also have broken gem specs at times, add the default ones
