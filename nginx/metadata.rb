@@ -14,11 +14,6 @@ attribute 'domain_name',
   :type => "string",
   :required => "required",
   :recipes => [ "nginx::default" ]
-attribute 'code_path',
-  :display_name => "Document Root",
-  :type => "string",
-  :required => "required",
-  :recipes => [ "nginx::default" ]
 attribute 'nginx/ssl_cert',
   :display_name => 'SSL Certificate',
   :description => 'PEM based SSL certificate data',
@@ -41,7 +36,7 @@ attribute 'nginx/document_root',
   :display_name => 'Nginx Document Root',
   :description => 'The documentroot for nginx',
   :default => '/srv/http',
-  :recipes => [ 'nginx::proxy', 'nginx::ssl_termination' ]
+  :recipes => [ 'nginx::proxy', 'nginx::ssl_termination', 'nginx::default']
 attribute 'nginx/proxy',
   :display_name => 'Nginx Proxy Location',
   :description => 'The server nginx should proxy to',

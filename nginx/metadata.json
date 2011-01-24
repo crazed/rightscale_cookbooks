@@ -78,7 +78,8 @@
         "type": "string",
         "recipes": [
           "nginx::proxy",
-          "nginx::ssl_termination"
+          "nginx::ssl_termination",
+          "nginx::default"
         ],
         "display_name": "Nginx Document Root",
         "description": "The documentroot for nginx"
@@ -109,18 +110,6 @@
         ],
         "display_name": "Domain",
         "description": "The FQDN of your website"
-      },
-      "code_path": {
-        "required": "required",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "type": "string",
-        "recipes": [
-          "nginx::default"
-        ],
-        "display_name": "Document Root"
       }
     },
     "suggestions": {

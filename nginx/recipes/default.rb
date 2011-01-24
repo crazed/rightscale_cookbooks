@@ -11,7 +11,7 @@
 package "nginx"
 
 # setup the document root
-directory node.code_path do
+directory node.document_root do
   owner "www-data"
   group "www-data"
   mode "0755"
@@ -21,7 +21,7 @@ end
 
 # drop a default index page in
 execute "default-index-page" do
-  command "echo '<?php phpinfo(); ?>' > #{node.code_path}/index.php"
+  command "echo '<?php phpinfo(); ?>' > #{node.document_root}/index.php"
   action :run
 end
 
@@ -29,7 +29,7 @@ end
 template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
   variables(
-    :document_root => node.code_path,
+    :document_root => node.document_root,
     :server_name => node.domain_name
   )
 end
