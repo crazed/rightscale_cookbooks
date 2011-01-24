@@ -19,18 +19,12 @@ directory node.document_root do
   action :create
 end
 
-# drop a default index page in
-execute "default-index-page" do
-  command "echo '<?php phpinfo(); ?>' > #{node.document_root}/index.php"
-  action :run
-end
-
 # default nginx configuration
 template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
   variables(
-    :document_root => node.document_root,
-    :server_name => node.domain_name
+    :document_root => node.nginx.document_root,
+    :server_name => node.nginx.server_name
   )
 end
 

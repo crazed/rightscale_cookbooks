@@ -98,7 +98,7 @@
         "display_name": "Load Balancer URI",
         "description": "The load balancer URI, ex: localhost:85"
       },
-      "domain_name": {
+      "nginx/server_name": {
         "required": "required",
         "calculated": false,
         "choice": [
@@ -108,7 +108,7 @@
         "recipes": [
           "nginx::default"
         ],
-        "display_name": "Domain",
+        "display_name": "Nginx Server Name",
         "description": "The FQDN of your website"
       }
     },

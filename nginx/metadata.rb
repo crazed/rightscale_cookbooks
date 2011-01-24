@@ -8,8 +8,8 @@ recipe "nginx::default", "Installs and configured nginx"
 recipe "nginx::ssl_termination", "Installs and configures Nginx for SSL termination with HAproxy"
 recipe "nginx::proxy", "Installs and configures Nginx for use with a proxy"
 recipe "nginx::maintenance", "A basic script for enabling a maintenance page"
-attribute 'domain_name',
-  :display_name => "Domain",
+attribute 'nginx/server_name',
+  :display_name => "Nginx Server Name",
   :description => "The FQDN of your website",
   :type => "string",
   :required => "required",
