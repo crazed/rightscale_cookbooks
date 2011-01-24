@@ -1,0 +1,69 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "cloud@datapipe.com",
+    "description": "Configures mysql-client for RDS",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "rds::mysql_client": "Configures MySQL client for use with RDS"
+    },
+    "attributes": {
+      "rds/hostname": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rds::mysql_client"
+        ],
+        "display_name": "RDS Hostname",
+        "description": "The RDS endpoint hostname"
+      },
+      "rds/user": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rds::mysql_client"
+        ],
+        "display_name": "RDS Username",
+        "description": "The master username for an RDS instance"
+      },
+      "rds/password": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rds::mysql_client"
+        ],
+        "display_name": "RDS Password",
+        "description": "The password for your RDS user"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "rds",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
