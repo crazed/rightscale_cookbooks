@@ -1,0 +1,96 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "cloud@datapipe.com",
+    "description": "Provides operational scripts for code deployments",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "deploy::svn": "script to deploy code via SVN"
+    },
+    "attributes": {
+      "deploy/svn_username": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "deploy::svn"
+        ],
+        "display_name": "SVN Username",
+        "description": "The username for your SVN repository"
+      },
+      "deploy/repository": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "deploy::svn"
+        ],
+        "display_name": "SVN Repository",
+        "description": "The URI to your SVN repository"
+      },
+      "deploy/svn_password": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "deploy::svn"
+        ],
+        "display_name": "SVN Password",
+        "description": "The password for your SVN user"
+      },
+      "deploy/path": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/srv/app",
+        "type": "string",
+        "recipes": [
+          "deploy::svn"
+        ],
+        "display_name": "Deployment Path",
+        "description": "The path to deploy to"
+      },
+      "deploy/svn_arguments": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "deploy::svn"
+        ],
+        "display_name": "SVN Extra Arguments",
+        "description": "Extra command line options to pass to svn"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "deploy",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
