@@ -11,7 +11,7 @@
 package "nginx"
 
 # setup the document root
-directory node.document_root do
+directory node.nginx.document_root do
   owner "www-data"
   group "www-data"
   mode "0755"
