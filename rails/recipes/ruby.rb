@@ -13,11 +13,21 @@ when 'ubuntu'
   package 'ruby-dev'
   package 'libopenssl-ruby'
   package 'build-essential'
-  package 'rubygems'
-  package 'rake'
 else 
   Chef::Log.fatal("Your platform is not supported: #{node.platform}")
   raise
+end
+
+bash "install rubygems" do
+  cwd '/tmp'
+  creates '/usr/bin/gem'
+  code <<-EOH
+  wget http://rubyforge.org/frs/download.php/69365/rubygems-1.3.6.tgz
+  tar xzf rubygems-1.3.6.tgz
+  cd rubygems-1.3.6
+  ruby setup.rb
+  gem update --system
+  EOH
 end
 
 # the rightscale gem sources seem to miss some updates
