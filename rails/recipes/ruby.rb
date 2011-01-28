@@ -26,6 +26,7 @@ bash "install rubygems" do
   tar xzf rubygems-1.3.6.tgz
   cd rubygems-1.3.6
   ruby setup.rb
+  ln -s /usr/bin/gem1.8 /usr/bin/gem
   gem update --system
   EOH
 end
