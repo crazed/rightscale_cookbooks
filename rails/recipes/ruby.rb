@@ -27,9 +27,10 @@ bash "install rubygems" do
   cd rubygems-1.3.6
   ruby setup.rb
   ln -s /usr/bin/gem1.8 /usr/bin/gem
-  gem update --system
   EOH
 end
+
+execute 'gem update --system'
 
 # the rightscale gem sources seem to miss some updates
 # and also have broken gem specs at times, add the default ones
