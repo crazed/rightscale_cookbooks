@@ -20,3 +20,8 @@ attribute 'mysql/password',
   :description => 'The password for a regular MySQL user.',
   :required => 'required',
   :recipes => [ 'mysql::new_database' ]
+attribute 'mysql/database',
+  :display_name => 'MySQL User Database',
+  :description => 'New database that will a new user will have full access to.',
+  :default => 'user_db',
+  :recipes => [ 'mysql::new_database']
