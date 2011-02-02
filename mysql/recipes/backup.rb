@@ -6,7 +6,7 @@ directory "/opt/utils" do
   action :create
 end
 
-tempalte "/opt/utils/dumper.sh" do
+template "/opt/utils/dumper.sh" do
   source "dumper.sh.erb"
   variables(
     :s3_bucket => node.mysql.dumps_bucket,
