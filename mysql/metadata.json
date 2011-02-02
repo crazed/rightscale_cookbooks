@@ -1,19 +1,30 @@
 {
-    "providing": {
-    },
-    "license": "All rights reserved",
-    "maintainer": "Datapipe",
     "replacing": {
     },
     "maintainer_email": "afeid@datapipe.com",
+    "description": "Installs/Configures mysql",
     "groupings": {
     },
-    "description": "Installs/Configures mysql",
     "recommendations": {
     },
-    "platforms": {
+    "recipes": {
+      "mysql::default": "Installs mysql-server",
+      "mysql::new_database": "Configures a new database"
     },
     "attributes": {
+      "mysql/password": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "mysql::new_database"
+        ],
+        "display_name": "MySQL User Password",
+        "description": "The password for a regular MySQL user."
+      },
       "mysql/rootpw": {
         "required": "required",
         "calculated": false,
@@ -22,21 +33,38 @@
         ],
         "type": "string",
         "recipes": [
-
+          "mysql::default"
         ],
         "display_name": "MySQL Root Password"
+      },
+      "mysql/user": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "user",
+        "type": "string",
+        "recipes": [
+          "mysql::new_database"
+        ],
+        "display_name": "MySQL User",
+        "description": "A regular mysql user, used typically for application level database access."
       }
     },
     "suggestions": {
     },
     "dependencies": {
     },
-    "version": "0.0.1",
-    "recipes": {
-      "mysql::default": "Installs mysql-server"
-    },
-    "name": "mysql",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\nThis will install MySQL and set the root password. This also creates /root/.my.cnf with proper credentials to allow easy command line access to MySQL.\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\nmysql.rootpw, this is the root password to set\n\n= USAGE:\n\n"
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\nThis will install MySQL and set the root password. This also creates /root/.my.cnf with proper credentials to allow easy command line access to MySQL.\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\nmysql.rootpw, this is the root password to set\n\n= USAGE:\n\n",
+    "name": "mysql",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
   }
