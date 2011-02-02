@@ -1,17 +1,15 @@
 {
-    "providing": {
-    },
-    "license": "All rights reserved",
-    "maintainer": "Datapipe",
     "replacing": {
     },
     "maintainer_email": "afeid@datapipe.com",
+    "description": "Installs/Configures apt",
     "groupings": {
     },
-    "description": "Installs/Configures apt",
     "recommendations": {
     },
-    "platforms": {
+    "recipes": {
+      "apt::auto_remove": "runs apt-get autoremove -y",
+      "apt::default": "configures apt to not install recommended or suggested packages"
     },
     "attributes": {
     },
@@ -19,12 +17,15 @@
     },
     "dependencies": {
     },
-    "version": "0.0.1",
-    "recipes": {
-      "apt::default": "configures apt to not install recommended or suggested packages"
-    },
-    "name": "apt",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "apt",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
   }
