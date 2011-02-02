@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dump_dir=/dumps
-tstamp=`date +%Y%m%d`
+tstamp=`date +%Y%m%d.%H%m%S`
 retain=7
 for db in `echo "show databases" | mysql | egrep -v '^Database$|^information_schema$'`; do
   mysqldump $db | gzip > $dump_dir/$db-$tstamp.sql.gz
