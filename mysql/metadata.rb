@@ -6,6 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "mysql::default", "Installs mysql-server"
 recipe "mysql::new_database", "Configures a new database"
+recipe "mysql::backup", "Installs a nightly cronjob that performs database dumps to an S3 bucket"
 attribute 'mysql/rootpw',
   :display_name => "MySQL Root Password",
   :required => "required",
@@ -25,3 +26,13 @@ attribute 'mysql/database',
   :description => 'New database that will a new user will have full access to.',
   :default => 'user_db',
   :recipes => [ 'mysql::new_database']
+attribute 'mysql/dumps_bucket',
+  :display_name => 'MySQL Dumps S3 Bucket',
+  :description => 'S3 bucket to place mysql dumps in',
+  :required => 'required',
+  :recipes => [ 'mysql::backup' ]
+attribute 'mysql/dumps_bucket_path',
+  :display_name => 'MySQL Dumps S3 Path',
+  :description => 'The path relative to your s3 bucket to store dumps',
+  :default => '/',
+  :recipes => [ 'mysql::backup' ]

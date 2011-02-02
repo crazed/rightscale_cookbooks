@@ -9,6 +9,7 @@
     },
     "recipes": {
       "mysql::default": "Installs mysql-server",
+      "mysql::backup": "Installs a nightly cronjob that performs database dumps to an S3 bucket",
       "mysql::new_database": "Configures a new database"
     },
     "attributes": {
@@ -39,6 +40,20 @@
         "display_name": "MySQL User Password",
         "description": "The password for a regular MySQL user."
       },
+      "mysql/dumps_bucket_path": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/",
+        "type": "string",
+        "recipes": [
+          "mysql::backup"
+        ],
+        "display_name": "MySQL Dumps S3 Path",
+        "description": "The path relative to your s3 bucket to store dumps"
+      },
       "mysql/rootpw": {
         "required": "required",
         "calculated": false,
@@ -50,6 +65,19 @@
           "mysql::default"
         ],
         "display_name": "MySQL Root Password"
+      },
+      "mysql/dumps_bucket": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "mysql::backup"
+        ],
+        "display_name": "MySQL Dumps S3 Bucket",
+        "description": "S3 bucket to place mysql dumps in"
       },
       "mysql/user": {
         "required": "optional",
