@@ -7,6 +7,7 @@ version          "0.0.1"
 recipe "rails::ruby", "installs various ruby dependencies"
 recipe "rails::sqlite", "installs sqlite3 and ruby gem"
 recipe "rails::nginx", "installs and configures nginx to pass traffic down to unicorn"
+recipe "rails::nginx_ssl", "installs and configures nginx with SSL to pass traffic down to unicorn"
 recipe "rails::deploy", "deploys code from git repo"
 recipe "rails::rake", "executes rake tasks"
 recipe "rails::mysql", "installs mysql gem"
@@ -54,3 +55,13 @@ attribute "rails/maintenance_page",
   :type => "string",
   :default => "maintenance.html.not_active",
   :recipes => [ 'rails::maintenance' ]
+attribute "rails/ssl_key",
+  :display_name => "Nginx SSL Key",
+  :description => "SSL key to use",
+  :required => "required",
+  :recipes => [ 'rails::nginx_ssl' ]
+attribute "rails/ssl_cert",
+  :display_name => "Nginx SSL Certificate",
+  :description => "SSL Certificate to use",
+  :required => "required",
+  :recipes => [ 'rails::nginx_ssl' ]

@@ -15,6 +15,7 @@
       "rails::rake": "executes rake tasks",
       "rails::nginx": "installs and configures nginx to pass traffic down to unicorn",
       "rails::rollback": "rollback to previous code revision",
+      "rails::nginx_ssl": "installs and configures nginx with SSL to pass traffic down to unicorn",
       "rails::ruby": "installs various ruby dependencies",
       "rails::deploy": "deploys code from git repo"
     },
@@ -107,6 +108,32 @@
         ],
         "display_name": "Rails Environment",
         "description": "The environment you want to install with"
+      },
+      "rails/ssl_key": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rails::nginx_ssl"
+        ],
+        "display_name": "Nginx SSL Key",
+        "description": "SSL key to use"
+      },
+      "rails/ssl_cert": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rails::nginx_ssl"
+        ],
+        "display_name": "Nginx SSL Certificate",
+        "description": "SSL Certificate to use"
       },
       "rails/maintenance_page": {
         "required": "optional",

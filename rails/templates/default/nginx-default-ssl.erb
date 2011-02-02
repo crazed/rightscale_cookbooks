@@ -1,0 +1,65 @@
+server {
+  listen        80 default;
+  server_name   localhost;
+  rewrite       ^(.*)$ https://$host/$1 permanent;
+}
+
+server {
+  listen        443;
+  server_name   localhost;
+
+  ssl                   on;
+  ssl_certificate       /etc/nginx/ssl/cert.pem;
+  ssl_certificate_key   /etc/nginx/ssl/key.pem;
+
+  root   <%= @app_path %>/current/public;
+  recursive_error_pages on;
+  set $maintenance_page /system/maintenance.html;
+  set $maintenance_path $document_root/$maintenance_page;
+
+  location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+
+    # check for a maintenance page
+    if (-f $maintenance_path) {
+      return 503;
+    }
+
+    if (-f $request_filename/index.html) {
+      rewrite (.*) $1/index.html break;
+    }
+    if (-f $request_filename.html) {
+      rewrite (.*) $1.html break;
+    }
+    if (!-f $request_filename) {
+      proxy_pass http://unicorn;
+      break;
+    }
+
+    error_page 404 /404.html;
+    error_page 500 502 504 /500.html;
+    error_page 503 @503;
+
+  }
+
+  location @503 {
+    # if this is a real 503 error, return that
+    if (!-f $maintenance_path) {
+      error_page 503 /500.html;
+    }
+
+    # catch invalid methods, usually caused by posts to a static page
+    # after the maintenance page has been enabled
+    error_page 405 = $maintenance_page;
+
+    # service static assets if found
+    if (-f $request_filename) {
+      break;
+    }
+    rewrite ^(.*)$ $maintenance_page break;
+  }
+
+}
