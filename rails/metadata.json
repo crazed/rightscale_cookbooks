@@ -45,6 +45,7 @@
         "recipes": [
           "rails::unicorn",
           "rails::nginx",
+          "rails::nginx_ssl",
           "rails::deploy",
           "rails::rake",
           "rails::maintenance"

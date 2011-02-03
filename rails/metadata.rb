@@ -24,7 +24,7 @@ attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
   :default => "/srv/app",
-  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::deploy', 'rails::rake', 'rails::maintenance' ]
+  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::nginx_ssl', 'rails::deploy', 'rails::rake', 'rails::maintenance' ]
 attribute "rails/repo",
   :display_name => "Application Git Repo",
   :description => "Git repo to pull from for your application",
