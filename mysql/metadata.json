@@ -8,6 +8,7 @@
     "recommendations": {
     },
     "recipes": {
+      "mysql::run_s3_import": "Imports MySQL dump from an S3 bucket",
       "mysql::default": "Installs mysql-server",
       "mysql::backup": "Installs a nightly cronjob that performs database dumps to an S3 bucket",
       "mysql::new_database": "Configures a new database"
@@ -74,10 +75,25 @@
         ],
         "type": "string",
         "recipes": [
-          "mysql::backup"
+          "mysql::backup",
+          "mysql::run_s3_import"
         ],
         "display_name": "MySQL Dumps S3 Bucket",
         "description": "S3 bucket to place mysql dumps in"
+      },
+      "mysql/dumps_bucket_file": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "/latest.sql",
+        "type": "string",
+        "recipes": [
+          "mysql::run_s3_import"
+        ],
+        "display_name": "MySQL S3 File Path",
+        "description": "Dump file path to import"
       },
       "mysql/user": {
         "required": "optional",
