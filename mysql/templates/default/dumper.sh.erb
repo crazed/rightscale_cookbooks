@@ -8,4 +8,4 @@ for db in `echo "show databases" | mysql | egrep -v '^Database$|^information_sch
 done
 find $dump_dir -name "*.sql.gz" -a -mtime +$retain -exec rm {} \;
 
-/usr/bin/s3cmd sync /dumps/ s3://<%= @s3_bucket %><%= @s3_path %>/
+/usr/bin/s3cmd sync --delete-removed /dumps/ s3://<%= @s3_bucket %><%= @s3_path %>/
