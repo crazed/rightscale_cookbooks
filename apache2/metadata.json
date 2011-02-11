@@ -57,7 +57,7 @@
         "display_name": "mod_rewrite enabled",
         "description": "Whether or not to enable mod_rewrite"
       },
-      "apache2/document_root": {
+      "www/document_root": {
         "required": "optional",
         "calculated": false,
         "choice": [

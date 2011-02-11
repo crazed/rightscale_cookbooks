@@ -7,7 +7,7 @@ version          "0.0.1"
 recipe 'apache2::default', 'installs/configures apache2'
 recipe 'apache2::php', 'installs/configures PHP'
 recipe 'apache2::restart', 'restarts apache2'
-attribute 'apache2/document_root',
+attribute 'www/document_root',
   :display_name => 'Document Root',
   :description => 'Directory with your web content',
   :type => 'string',

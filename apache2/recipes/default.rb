@@ -42,6 +42,16 @@ template "/etc/apache2/apache2.conf" do
   notifies :restart, resources(:service => "apache2"), :immediately
 end
 
+template "/etc/apache2/sites-enabled/000-default" do
+  owner "root"
+  group "root"
+  mode "644"
+  source "000-default.erb"
+  variables(
+    :document_root => node.www.document_root
+  )
+end
+
 case node.platform
 when 'ubuntu'
   if node.apache2.mod_rewrite == 'true'
