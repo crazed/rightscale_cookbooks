@@ -11,7 +11,7 @@
 package "nginx"
 
 # setup the document root
-directory node.nginx.document_root do
+directory node.www.document_root do
   owner "www-data"
   group "www-data"
   mode "0755"
@@ -23,7 +23,7 @@ end
 template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
   variables(
-    :document_root => node.nginx.document_root,
+    :document_root => node.www.document_root,
     :server_name => node.nginx.server_name
   )
 end

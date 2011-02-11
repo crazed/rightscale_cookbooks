@@ -68,7 +68,21 @@
         "display_name": "SSL Key",
         "description": "PEM based SSL private key data"
       },
-      "nginx/document_root": {
+      "nginx/load_balancer": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "localhost:85",
+        "type": "string",
+        "recipes": [
+          "nginx::ssl_termination"
+        ],
+        "display_name": "Load Balancer URI",
+        "description": "The load balancer URI, ex: localhost:85"
+      },
+      "www/document_root": {
         "required": "optional",
         "calculated": false,
         "choice": [
@@ -83,20 +97,6 @@
         ],
         "display_name": "Nginx Document Root",
         "description": "The documentroot for nginx"
-      },
-      "nginx/load_balancer": {
-        "required": "optional",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "default": "localhost:85",
-        "type": "string",
-        "recipes": [
-          "nginx::ssl_termination"
-        ],
-        "display_name": "Load Balancer URI",
-        "description": "The load balancer URI, ex: localhost:85"
       },
       "nginx/server_name": {
         "required": "required",

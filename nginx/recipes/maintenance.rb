@@ -7,13 +7,13 @@ else
   raise
 end
 
-case File.exists?("#{node.nginx.document_root}/maintenance.html")
+case File.exists?("#{node.www.document_root}/maintenance.html")
 when true
-  execute "rm -f #{node.nginx.document_root}/maintenance.html"
+  execute "rm -f #{node.www.document_root}/maintenance.html"
 else
   ruby_block 'create maintenance page' do
     block do
-      File.open("#{node.nginx.document_root}/maintenance.html", 'w') { |f| f.write(node.nginx.maintenance_html) }
+      File.open("#{node.www.document_root}/maintenance.html", 'w') { |f| f.write(node.nginx.maintenance_html) }
     end
   end
 end

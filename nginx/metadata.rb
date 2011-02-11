@@ -32,7 +32,7 @@ attribute 'nginx/load_balancer',
   :type => 'string',
   :default => 'localhost:85',
   :recipes => [ 'nginx::ssl_termination' ]
-attribute 'nginx/document_root',
+attribute 'www/document_root',
   :display_name => 'Nginx Document Root',
   :description => 'The documentroot for nginx',
   :default => '/srv/http',
