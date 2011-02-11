@@ -29,6 +29,13 @@ service "apache2" do
   running true
 end
 
+directory node.www.document_root do
+  owner "root"
+  group "root"
+  mode "755"
+  recursive true
+end
+
 template "/etc/apache2/apache2.conf" do
   owner "root"
   group "root"
@@ -50,6 +57,7 @@ template "/etc/apache2/sites-enabled/000-default" do
   variables(
     :document_root => node.www.document_root
   )
+  notifies :restart, resources(:service => "apache2"), :immediately
 end
 
 case node.platform
