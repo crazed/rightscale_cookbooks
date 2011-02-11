@@ -25,14 +25,14 @@ end
 
 case node.blog.engine
 when 'drupal'
-  blog_drupal node.code_path do
+  blog_drupal node.www.document_root do
     dbname node.blog.database
     dbuser node.blog.mysql_user
     dbpass node.blog.mysql_pass
     action :install
   end
 when 'wordpress'
-  blog_wordpress node.code_path do
+  blog_wordpress node.www.document_root do
     dbname node.blog.database
     dbuser node.blog.mysql_user
     dbpass node.blog.mysql_pass
@@ -48,7 +48,7 @@ end
 template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
   variables(
-    :document_root => node.code_path,
+    :document_root => node.www.document_root,
     :server_name => node.domain_name
   )
   notifies :start, resources(:service => "nginx"), :immediately

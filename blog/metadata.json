@@ -1,17 +1,14 @@
 {
-    "providing": {
-    },
-    "license": "All rights reserved",
-    "maintainer": "Datapipe",
     "replacing": {
     },
     "maintainer_email": "afeid@datapipe.com",
+    "description": "Installs/Configures blog",
     "groupings": {
     },
-    "description": "Installs/Configures blog",
     "recommendations": {
     },
-    "platforms": {
+    "recipes": {
+      "blog::default": "Downloads and configures a basic blogging platform"
     },
     "attributes": {
       "blog/mysql_pass": {
@@ -25,8 +22,8 @@
         "recipes": [
           "blog::default"
         ],
-        "description": "MySQL password to use",
-        "display_name": "MySQL Password"
+        "display_name": "MySQL Password",
+        "description": "MySQL password to use"
       },
       "blog/engine": {
         "required": "recommended",
@@ -40,8 +37,20 @@
         "recipes": [
           "blog::default"
         ],
-        "description": "The blog engine you would like to use",
-        "display_name": "Blog Engine"
+        "display_name": "Blog Engine",
+        "description": "The blog engine you would like to use"
+      },
+      "www/document_root": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "blog::default"
+        ],
+        "display_name": "Document Root"
       },
       "blog/database": {
         "required": "optional",
@@ -54,8 +63,8 @@
         "recipes": [
           "blog::default"
         ],
-        "description": "Database to create",
-        "display_name": "MySQL Database"
+        "display_name": "MySQL Database",
+        "description": "Database to create"
       },
       "domain_name": {
         "required": "required",
@@ -80,32 +89,23 @@
         "recipes": [
           "blog::default"
         ],
-        "description": "MySQL User to create",
-        "display_name": "MySQL User"
-      },
-      "code_path": {
-        "required": "required",
-        "calculated": false,
-        "choice": [
-
-        ],
-        "type": "string",
-        "recipes": [
-          "blog::default"
-        ],
-        "display_name": "Document Root"
+        "display_name": "MySQL User",
+        "description": "MySQL User to create"
       }
     },
     "suggestions": {
     },
     "dependencies": {
     },
-    "version": "0.0.1",
-    "recipes": {
-      "blog::default": "Downloads and configures a basic blogging platform"
-    },
-    "name": "blog",
     "conflicting": {
     },
-    "long_description": "= DESCRIPTION:\nThis will install wordpress or drupal based off the value of node.blog.engine. Once Drupal 7 comes out, drush will be used to fully configure a new site. Currently you have to enter the mysql credentials for drupal.\n\n= REQUIREMENTS:\nNginx and PHP configured.\n\n= ATTRIBUTES:\n- blog.engine, can be 'wordpress' or 'drupal', determines which provider will be used for blog configuration.\n- blog.dbuser, sets the database user for the blog\n- blog.dbpass, sets the database user's password for the blog\n- blog.dbname, sets the database host to use\n\n= USAGE:\n\n"
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\nThis will install wordpress or drupal based off the value of node.blog.engine. Once Drupal 7 comes out, drush will be used to fully configure a new site. Currently you have to enter the mysql credentials for drupal.\n\n= REQUIREMENTS:\nNginx and PHP configured.\n\n= ATTRIBUTES:\n- blog.engine, can be 'wordpress' or 'drupal', determines which provider will be used for blog configuration.\n- blog.dbuser, sets the database user for the blog\n- blog.dbpass, sets the database user's password for the blog\n- blog.dbname, sets the database host to use\n\n= USAGE:\n\n",
+    "name": "blog",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
   }
