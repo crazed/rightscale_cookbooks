@@ -16,5 +16,5 @@ template "/root/.s3cfg" do
     :aws_access_key_id => node.aws_access_key)
   owner "root"
   group "root"
-  mode 600
+  mode "600"
 end
