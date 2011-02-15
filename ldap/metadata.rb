@@ -6,6 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe "ldap::auth", "configures an instance for LDAP authentication"
 recipe 'ldap::sudoers', 'configures an instance to use LDAP for sudoers'
+recipe 'ldap::sshd', 'Configures sshd to allow password logins'
 attribute 'ldap/bind_dn',
   :display_name => 'LDAP Bind DN',
   :description => 'The DN to bind as for lookups in LDAP',

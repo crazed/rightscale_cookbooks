@@ -9,7 +9,8 @@
     },
     "recipes": {
       "ldap::sudoers": "configures an instance to use LDAP for sudoers",
-      "ldap::auth": "configures an instance for LDAP authentication"
+      "ldap::auth": "configures an instance for LDAP authentication",
+      "ldap::sshd": "Configures sshd to allow password logins"
     },
     "attributes": {
       "ldap/bind_pw": {
