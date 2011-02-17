@@ -10,6 +10,7 @@
     "recipes": {
       "apache2::restart": "restarts apache2",
       "apache2::php": "installs/configures PHP",
+      "apache2::php52": "installs/configures PHP 5.2",
       "apache2::default": "installs/configures apache2"
     },
     "attributes": {
