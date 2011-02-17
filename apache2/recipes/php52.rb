@@ -1,10 +1,3 @@
-template  '/etc/apt/sources.list.d/karmic.list' do
-  source 'karmic.list'
-  owner 'root'
-  group 'root'
-  mode '644'
-end
-
 template '/etc/apt/preferences.d/php' do
   source 'php'
   owner 'root'
@@ -12,6 +5,8 @@ template '/etc/apt/preferences.d/php' do
   mode '644'
 end
 
+package 'python-software-properties'
+execute 'add-apt-repository ppa:txwikinger/php5.2'
 execute 'apt-get update'
 
 case node.platform
