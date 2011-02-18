@@ -2,6 +2,9 @@ directory "/dumps" do
   action :create
 end
 
+# grab any existing dumps
+execute "s3cmd sync s3://#{node.mysql.dumps_bucket}#{node.mysql.dumps_bucket_path}/ /dumps/"
+
 directory "/opt/utils" do
   action :create
 end
