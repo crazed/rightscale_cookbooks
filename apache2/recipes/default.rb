@@ -49,7 +49,7 @@ template "/etc/apache2/apache2.conf" do
   notifies :restart, resources(:service => "apache2"), :immediately
 end
 
-template "/etc/apache2/sites-enabled/000-default" do
+template "/etc/apache2/sites-available/000-default" do
   owner "root"
   group "root"
   mode "644"
