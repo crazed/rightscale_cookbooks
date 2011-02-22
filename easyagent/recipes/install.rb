@@ -16,7 +16,6 @@ when 'ubuntu'
   # create easyagnt user
   user "easyagnt" do
     comment "Datapipe Monitoring"
-    system true
     home "/usr/local/soap"
     shell "/bin/sh"
   end
