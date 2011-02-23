@@ -28,7 +28,7 @@ end
 template "/etc/varnish/default.vcl" do
   source "default.vcl.erb"
   variables(
-    :backend_host => node.varnish.backend_host
+    :backend_host => node.varnish.backend_host,
     :backend_port => node.varnish.backend_port
   )
   owner "root"
