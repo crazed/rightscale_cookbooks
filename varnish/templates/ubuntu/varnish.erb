@@ -1,0 +1,5 @@
+DAEMON_OPTS="-a :<%= @listen_port %> \
+             -T localhost:6082 \
+             -f /etc/varnish/default.vcl \
+             -S /etc/varnish/secret \
+             -s file,/var/lib/varnish/$INSTANCE/varnish_storage.bin,1G"
