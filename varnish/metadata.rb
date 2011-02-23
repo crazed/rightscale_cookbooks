@@ -13,7 +13,7 @@ attribute 'varnish/port',
 attribute 'varnish/backend_host',
   :display_name => "Varnish Backend Host",
   :description => "Backend host to connect to",
-  :default => "localhost",
+  :default => "127.0.0.1",
   :recipes => [ 'varnish::install' ]
 attribute 'varnish/backend_port',
   :display_name => "Varnish Backend Port",

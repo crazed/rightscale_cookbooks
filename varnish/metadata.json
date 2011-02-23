@@ -17,7 +17,7 @@
         "choice": [
 
         ],
-        "default": "localhost",
+        "default": "127.0.0.1",
         "type": "string",
         "recipes": [
           "varnish::install"
