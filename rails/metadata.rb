@@ -14,6 +14,7 @@ recipe "rails::mysql", "installs mysql gem"
 recipe "rails::rollback", "rollback to previous code revision"
 recipe "rails::unicorn", "installs and configures unicorn"
 recipe "rails::maintenance", "turns the system maintenance page on"
+recipe "rails::delayed_jobs", "restarts delayed_jobs"
 attribute "rails/workers",
   :display_name => "Number Unicorn Workers",
   :description => "sets the number of workers to spawn for unicorn",
@@ -24,7 +25,7 @@ attribute "rails/app_path",
   :display_name => "Application Path",
   :description => "specifies the path to your application",
   :default => "/srv/app",
-  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::nginx_ssl', 'rails::deploy', 'rails::rake', 'rails::maintenance' ]
+  :recipes => [ 'rails::unicorn', 'rails::nginx', 'rails::nginx_ssl', 'rails::deploy', 'rails::rake', 'rails::maintenance', 'rails::delayed_jobs' ]
 attribute "rails/repo",
   :display_name => "Application Git Repo",
   :description => "Git repo to pull from for your application",
@@ -42,7 +43,7 @@ attribute "rails/environment",
   :description => "The environment you want to install with",
   :type => "string",
   :default => "production",
-  :recipes => [ 'rails::unicorn', 'rails::rake', 'rails::deploy' ]
+  :recipes => [ 'rails::unicorn', 'rails::rake', 'rails::deploy', 'rails::delayed_jobs' ]
 attribute "rails/branch",
   :display_name => "Branch",
   :description => "Git branch to use",
