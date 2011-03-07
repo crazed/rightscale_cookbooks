@@ -16,6 +16,7 @@
       "rails::nginx": "installs and configures nginx to pass traffic down to unicorn",
       "rails::rollback": "rollback to previous code revision",
       "rails::nginx_ssl": "installs and configures nginx with SSL to pass traffic down to unicorn",
+      "rails::delayed_jobs": "restarts delayed_jobs",
       "rails::ruby": "installs various ruby dependencies",
       "rails::deploy": "deploys code from git repo"
     },
@@ -48,7 +49,8 @@
           "rails::nginx_ssl",
           "rails::deploy",
           "rails::rake",
-          "rails::maintenance"
+          "rails::maintenance",
+          "rails::delayed_jobs"
         ],
         "display_name": "Application Path",
         "description": "specifies the path to your application"
@@ -105,7 +107,8 @@
         "recipes": [
           "rails::unicorn",
           "rails::rake",
-          "rails::deploy"
+          "rails::deploy",
+          "rails::delayed_jobs"
         ],
         "display_name": "Rails Environment",
         "description": "The environment you want to install with"
