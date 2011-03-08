@@ -3,7 +3,7 @@
 # Recipe:: cruisecontrol.rb
 #
 
-package "openssl-ruby"
+package "libopenssl-ruby"
 package "rubygems"
 
 gem_package "rake"
