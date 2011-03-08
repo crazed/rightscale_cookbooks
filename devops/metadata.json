@@ -1,0 +1,30 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "YOUR_EMAIL",
+    "description": "Installs/Configures devops",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "devops::cruisecontrol": "installs cruisecontrol.rb from github"
+    },
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "devops",
+    "providing": {
+    },
+    "maintainer": "YOUR_COMPANY_NAME"
+  }
