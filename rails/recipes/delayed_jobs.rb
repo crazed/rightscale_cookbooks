@@ -1,1 +1,1 @@
-execute "RAILS_ENV=#{node.rails.environment} #{node.rails.app_path}/current/scripts/delayed_jobs restart"
+execute "RAILS_ENV=#{node.rails.environment} #{node.rails.app_path}/current/script/delayed_jobs restart"
