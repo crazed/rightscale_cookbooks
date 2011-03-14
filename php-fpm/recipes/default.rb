@@ -57,10 +57,11 @@ package "php5-common"
 package "php5-mysql"
 package "php5-suhosin"
 package "php5-gd"
-package "php5-fpm" 
+package "php5-curl"
 package "php-pear" 
 package "php5-memcache" 
 package "php-apc" 
+package "php5-fpm" 
 
 # start up php-fpm
 service "php5-fpm" do
