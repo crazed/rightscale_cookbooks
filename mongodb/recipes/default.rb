@@ -14,6 +14,7 @@ template '/etc/apt/sources.list.d/10gen.list' do
   mode '644'
 end
 
+execute 'apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10'
 execute 'apt-get update'
 package 'mongodb-10gen'
 
