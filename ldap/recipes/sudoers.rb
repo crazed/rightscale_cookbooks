@@ -18,6 +18,9 @@ when 'ubuntu'
   end
 
   package 'nslcd' # package needed to properly use sudo in ldap
+  service 'nscd' do
+    action :restart
+  end
 
   # setup nsswitch.conf to use ldap for sudo
   template '/etc/nsswitch.conf' do
