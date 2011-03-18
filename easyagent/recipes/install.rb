@@ -25,8 +25,8 @@ when 'ubuntu'
     user "root"
     cwd "/tmp"
     code <<-EOH
-    wget http://files.storm.datapipe.com/easyagent-current.tar.gz
-    wget http://files.storm.datapipe.com/install-current
+    wget http://files.dpcloud.com/easyagent-current.tar.gz
+    wget http://files.dpcloud.com/install-current
     chmod 755 install-current
     ./install-current $PWD/easyagent-current.tar.gz easyagnt
     cp /usr/local/soap/install/easyagent-tcp.init.d /etc/init.d/easyagent-tcp
