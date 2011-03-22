@@ -10,7 +10,7 @@
 case node.platform
 when 'ubuntu'
   package 'ruby'
-  package 'ruby-dev'
+  package 'ruby1.8-dev'
   package 'libopenssl-ruby'
   package 'build-essential'
 else 
