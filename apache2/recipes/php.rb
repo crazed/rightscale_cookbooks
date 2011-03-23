@@ -4,3 +4,8 @@ when 'ubuntu'
     package pkg
   end
 end
+
+service 'apache2' do
+  running true
+  action :restart
+end
