@@ -8,7 +8,8 @@
     "recommendations": {
     },
     "recipes": {
-      "rds::mysql_client": "Configures MySQL client for use with RDS"
+      "rds::mysql_client": "Configures MySQL client for use with RDS",
+      "rds::new_database": "Creates a new MySQL database inside of RDS"
     },
     "attributes": {
       "rds/hostname": {

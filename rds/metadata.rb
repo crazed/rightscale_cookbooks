@@ -5,6 +5,7 @@ description      "Configures mysql-client for RDS"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 recipe 'rds::mysql_client', "Configures MySQL client for use with RDS"
+recipe 'rds::new_database', "Creates a new MySQL database inside of RDS"
 attribute 'rds/user',
   :display_name => 'RDS Username',
   :description => 'The master username for an RDS instance',
