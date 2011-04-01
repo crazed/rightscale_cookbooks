@@ -1,0 +1,69 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "cloud@datapipe.com",
+    "description": "Installs/Configures wordpress",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "wordpress::single_site_rds": "Installs a single site wordpress with RDS database"
+    },
+    "attributes": {
+      "rds/new_user": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "wordpress::single_site_rds"
+        ],
+        "display_name": "New RDS User",
+        "description": "Create a new RDS user"
+      },
+      "rds/new_database": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "wordpress::single_site_rds"
+        ],
+        "display_name": "New RDS Database",
+        "description": "New database to create in an RDS instance"
+      },
+      "rds/new_password": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "wordpress::single_site_rds"
+        ],
+        "display_name": "New RDS User's Password",
+        "description": "The password for a new RDS user"
+      }
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "wordpress",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
