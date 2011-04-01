@@ -37,6 +37,32 @@
         "display_name": "RDS Username",
         "description": "The master username for an RDS instance"
       },
+      "rds/new_user": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rds::new_database"
+        ],
+        "display_name": "New RDS User",
+        "description": "Create a new RDS user"
+      },
+      "rds/new_database": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rds::new_database"
+        ],
+        "display_name": "New RDS Database",
+        "description": "New database to create in an RDS instance"
+      },
       "rds/password": {
         "required": "required",
         "calculated": false,
@@ -49,6 +75,19 @@
         ],
         "display_name": "RDS Password",
         "description": "The password for your RDS user"
+      },
+      "rds/new_password": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "rds::new_database"
+        ],
+        "display_name": "New RDS User's Password",
+        "description": "The password for a new RDS user"
       }
     },
     "suggestions": {

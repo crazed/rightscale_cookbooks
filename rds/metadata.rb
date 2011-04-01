@@ -23,3 +23,18 @@ attribute 'rds/hostname',
   :type => 'string',
   :required => 'required',
   :recipes => [ 'rds::mysql_client' ]
+attribute 'rds/new_database',
+  :display_name => "New RDS Database",
+  :description => "New database to create in an RDS instance",
+  :required => 'required',
+  :recipes => [ 'rds::new_database' ]
+attribute 'rds/new_password',
+  :display_name => "New RDS User's Password",
+  :description => "The password for a new RDS user",
+  :required => 'required',
+  :recipes => [ 'rds::new_database' ]
+attribute 'rds/new_user',
+  :display_name => "New RDS User",
+  :description => "Create a new RDS user",
+  :required => 'required',
+  :recipes => [ 'rds::new_database' ]
