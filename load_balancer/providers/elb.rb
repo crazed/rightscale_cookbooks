@@ -20,7 +20,7 @@ action :register do
 
   case elb_zones.include?(node.ec2.placement_availability_zone)
   when true
-    response = elb.register_instances(node.ec2.instance_id, new_resource.elb_name)
+    response = elb.register_instances([node.ec2.instance_id], new_resource.elb_name)
     case response.status
     when HTTP_OK
       Chef::Log.info("ELB: #{node.ec2.instance_id} has been registered to '#{new_resource.elb_name}'")
@@ -36,7 +36,7 @@ end
 
 action :deregister do
   load_fog_gem
-  response = elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
+  response = elb.deregister_instances([node.ec2.instance_id], new_resource.elb_name)
 
   case response.status
   when HTTP_OK
