@@ -18,7 +18,10 @@ action :install do
     group "www-data"
     mode "755"
   end
+
   execute "preconfigure" do
-    command "curl http://localhost/wp-admin/setup-config.php?step=1 -d dbname=#{new_resource.dbname} -d uname=#{new_resource.dbuser} -d pwd=#{new_resource.dbpass} -d dbhost=#{new_resource.dbhost} -d prefix=wp_"
+    creates "#{new_resource.install_path}/wp-config.php"
+    Chef::Log.info("Running: curl http://localhost/wp-admin/setup-config.php?step=2 -d dbname='#{new_resource.dbname}' -d uname='#{new_resource.dbuser}' -d pwd='#{new_resource.dbpass}' -d dbhost=#{new_resource.dbhost}")
+    command "curl http://localhost/wp-admin/setup-config.php?step=2 -d dbname='#{new_resource.dbname}' -d uname='#{new_resource.dbuser}' -d pwd='#{new_resource.dbpass}' -d dbhost=#{new_resource.dbhost}"
   end
 end
