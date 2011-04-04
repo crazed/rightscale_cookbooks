@@ -3,6 +3,7 @@ HTTP_OK = 200
 def load_fog_gem
   begin
     require 'fog'
+    gem 'fog', '~> 0.5.0'
     Excon.ssl_ca_path = '/etc/ssl/certs' # hack, needed to get rightscale sandbox to use the right certs
   rescue LoadError
     Chef::Log.warn("Mising the 'fog' gem")
@@ -20,7 +21,7 @@ action :register do
 
   case elb_zones.include?(node.ec2.placement_availability_zone)
   when true
-    response = elb.register_instances([node.ec2.instance_id], new_resource.elb_name)
+    response = elb.register_instances(node.ec2.instance_id, new_resource.elb_name)
     case response.status
     when HTTP_OK
       Chef::Log.info("ELB: #{node.ec2.instance_id} has been registered to '#{new_resource.elb_name}'")
@@ -36,7 +37,7 @@ end
 
 action :deregister do
   load_fog_gem
-  response = elb.deregister_instances([node.ec2.instance_id], new_resource.elb_name)
+  response = elb.deregister_instances(node.ec2.instance_id, new_resource.elb_name)
 
   case response.status
   when HTTP_OK
