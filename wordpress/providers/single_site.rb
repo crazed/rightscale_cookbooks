@@ -19,6 +19,6 @@ action :install do
     mode "755"
   end
   execute "preconfigure" do
-    command "curl http://localhost/wp-admin/setup-config.php?step=2 -d dbname=#{new_resource.dbname} -d uname=#{new_resource.dbuser} -d pwd=#{new_resource.dbpass} -d dbhost=#{new_resource.dbhost} -d prefix=wp_"
+    command "curl http://localhost/wp-admin/setup-config.php?step=1 -d dbname=#{new_resource.dbname} -d uname=#{new_resource.dbuser} -d pwd=#{new_resource.dbpass} -d dbhost=#{new_resource.dbhost} -d prefix=wp_"
   end
 end
