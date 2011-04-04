@@ -20,3 +20,9 @@ attribute 'rds/new_user',
   :description => "Create a new RDS user",
   :required => 'required',
   :recipes => [ 'wordpress::single_site_rds' ]
+attribute 'rds/user',
+  :display_name => 'RDS Username',
+  :description => 'The master username for an RDS instance',
+  :type => 'string',
+  :required => 'required',
+  :recipes => [ 'wordpress::single_site_rds' ]

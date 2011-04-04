@@ -5,9 +5,10 @@ action :install do
   end
   bash "install_wordpress" do
     cwd "/tmp"
+    not_if "#{new_resource.install_path}/wp-config.php"
     code <<-EOH
-    wget http://wordpress.org/latest.zip
-    unzip latest.zip
+    wget http://wordpress.org/latest.tar.gz
+    tar xzf latest.tar.gz
     rm -rf #{new_resource.install_path}
     mv /tmp/wordpress #{new_resource.install_path}
     chown -R www-data:www-data #{new_resource.install_path}

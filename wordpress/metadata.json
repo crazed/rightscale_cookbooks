@@ -11,6 +11,19 @@
       "wordpress::single_site_rds": "Installs a single site wordpress with RDS database"
     },
     "attributes": {
+      "rds/user": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "type": "string",
+        "recipes": [
+          "wordpress::single_site_rds"
+        ],
+        "display_name": "RDS Username",
+        "description": "The master username for an RDS instance"
+      },
       "rds/new_user": {
         "required": "required",
         "calculated": false,
