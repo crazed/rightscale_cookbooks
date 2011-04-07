@@ -19,5 +19,5 @@ end
 
 service 'tomcat6' do
   running true
-  action [ :enabled, :start ]
+  action [ :enable, :start ]
 end
