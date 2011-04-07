@@ -1,0 +1,30 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "cloud@datapipe.com",
+    "description": "Installs/Configures solr",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "solr::install": "Base install of Solr and Tomcat6"
+    },
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "solr",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
