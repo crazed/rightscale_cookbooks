@@ -12,7 +12,7 @@ directory '/opt/utils' do
   owner 'root'
   group 'root'
   mode '755'
-  recurisve true
+  recursive true
 end
 
 template '/opt/utils/s3backup.sh' do
