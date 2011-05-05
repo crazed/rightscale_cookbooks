@@ -5,7 +5,7 @@ include_recipe "s3cmd::default"
 # make the bucket if it doesn't exist
 execute "make_bucket" do
   not_if "/usr/bin/s3cmd ls | awk '{print $3}' |  grep -e ^#{node.s3.backup_bucket}$"
-  command "/usr/bin/s3cmd mb #{node.s3.backup_bucket}"
+  command "/usr/bin/s3cmd mb s3://#{node.s3.backup_bucket}"
 end
 
 directory '/opt/utils' do
