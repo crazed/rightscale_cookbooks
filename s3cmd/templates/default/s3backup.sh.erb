@@ -1,0 +1,3 @@
+#!/bin/bash
+tar czf /tmp/backup.tgz <%= @backup_path %>
+/usr/bin/s3cmd put /tmp/backup.tgz s3://<%= @backup_bucket %>/<%= @bucket_path %> && rm -f /tmp/backup.tgz
