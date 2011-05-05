@@ -41,7 +41,7 @@
         "display_name": "AWS Secret Key",
         "description": "Your AWS Secret Key"
       },
-      "s3.bucket_path": {
+      "s3/bucket_path": {
         "required": "required",
         "calculated": false,
         "choice": [
@@ -54,7 +54,7 @@
         "display_name": "S3 Bucket Path",
         "description": "The path in your S3 bucket to store backup files"
       },
-      "s3.backup_bucket": {
+      "s3/backup_bucket": {
         "required": "required",
         "calculated": false,
         "choice": [
@@ -93,7 +93,7 @@
         "display_name": "AWS Access Key",
         "description": "Your AWS access key"
       },
-      "s3.backup_path": {
+      "s3/backup_path": {
         "required": "required",
         "calculated": false,
         "choice": [
