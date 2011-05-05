@@ -16,7 +16,7 @@ directory '/opt/utils' do
 end
 
 template '/opt/utils/s3backup.sh' do
-  source "backup.sh.erb"
+  source "s3backup.sh.erb"
   mode "750"
   owner "root"
   group "root"
