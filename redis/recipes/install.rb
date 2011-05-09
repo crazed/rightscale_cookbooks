@@ -9,7 +9,7 @@
 
 package "redis-server"
 
-service "redis" do
+service "redis-server" do
   running true
 end
 
@@ -24,5 +24,5 @@ template "/etc/redis/redis.conf" do
     :loglevel => node.redis.loglevel,
     :num_databases => node.redis.databases
   )
-  notifies :restart, resources(:service => 'redis'), :immediately
+  notifies :restart, resources(:service => 'redis-server'), :immediately
 end
