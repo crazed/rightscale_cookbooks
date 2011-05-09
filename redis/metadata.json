@@ -1,0 +1,30 @@
+{
+    "replacing": {
+    },
+    "maintainer_email": "cloud.support@datapipe.com",
+    "description": "Installs/Configures redis",
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "recipes": {
+      "redis::install": "installs/configures redis"
+    },
+    "attributes": {
+    },
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "conflicting": {
+    },
+    "platforms": {
+    },
+    "version": "0.0.1",
+    "license": "All rights reserved",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "name": "redis",
+    "providing": {
+    },
+    "maintainer": "Datapipe"
+  }
