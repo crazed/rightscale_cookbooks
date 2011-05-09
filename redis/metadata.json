@@ -11,6 +11,51 @@
       "redis::install": "installs/configures redis"
     },
     "attributes": {
+      "redis/listen_port": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "6379",
+        "type": "string",
+        "recipes": [
+          "redis::install"
+        ],
+        "display_name": "Redis Bind Port",
+        "description": "The port Redis should listen on"
+      },
+      "redis/loglevel": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+          "debug",
+          "verbose",
+          "notice",
+          "warning"
+        ],
+        "default": "notice",
+        "type": "string",
+        "recipes": [
+          "redis::install"
+        ],
+        "display_name": "Redis Log Level",
+        "description": "Log level to set for Redis"
+      },
+      "redis/bind_address": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "127.0.0.1",
+        "type": "string",
+        "recipes": [
+          "redis::install"
+        ],
+        "display_name": "Redis Bind Address",
+        "description": "Address to listen on for Redis"
+      }
     },
     "suggestions": {
     },
