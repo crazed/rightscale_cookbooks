@@ -21,3 +21,8 @@ attribute 'redis/loglevel',
   :choice => [ 'debug', 'verbose', 'notice', 'warning' ],
   :default => 'notice',
   :recipes => [ 'redis::install' ]
+attribute 'redis/databases',
+  :display_name => 'Redis Databases',
+  :description => 'Number of Redis databases',
+  :default => '16',
+  :recipes => [ 'redis::install' ]

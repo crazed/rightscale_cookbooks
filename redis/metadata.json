@@ -25,6 +25,20 @@
         "display_name": "Redis Bind Port",
         "description": "The port Redis should listen on"
       },
+      "redis/databases": {
+        "required": "optional",
+        "calculated": false,
+        "choice": [
+
+        ],
+        "default": "16",
+        "type": "string",
+        "recipes": [
+          "redis::install"
+        ],
+        "display_name": "Redis Databases",
+        "description": "Number of Redis databases"
+      },
       "redis/loglevel": {
         "required": "optional",
         "calculated": false,
